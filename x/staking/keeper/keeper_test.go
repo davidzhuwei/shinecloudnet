@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 func TestParams(t *testing.T) {

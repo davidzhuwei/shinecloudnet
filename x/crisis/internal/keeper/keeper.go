@@ -6,9 +6,9 @@ import (
 
 	"github.com/tendermint/tendermint/libs/log"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/crisis/internal/types"
-	"github.com/barkisnet/barkis/x/params"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/crisis/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
 )
 
 // Keeper - crisis keeper

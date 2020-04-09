@@ -7,9 +7,9 @@ import (
 
 	"github.com/tendermint/tendermint/crypto"
 
-	sdk "github.com/barkisnet/barkis/types"
-	authtypes "github.com/barkisnet/barkis/x/auth/types"
-	"github.com/barkisnet/barkis/x/supply/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	authtypes "github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply/exported"
 )
 
 var _ exported.ModuleAccountI = (*ModuleAccount)(nil)

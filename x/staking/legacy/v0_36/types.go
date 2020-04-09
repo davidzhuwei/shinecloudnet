@@ -7,8 +7,8 @@ import (
 
 	"github.com/tendermint/tendermint/crypto"
 
-	sdk "github.com/barkisnet/barkis/types"
-	v034staking "github.com/barkisnet/barkis/x/staking/legacy/v0_34"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	v034staking "github.com/shinecloudfoundation/shinecloudnet/x/staking/legacy/v0_34"
 )
 
 const (

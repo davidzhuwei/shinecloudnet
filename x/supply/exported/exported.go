@@ -1,9 +1,9 @@
 package exported
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 
-	"github.com/barkisnet/barkis/x/auth/exported"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/exported"
 )
 
 // ModuleAccountI defines an account interface for modules that hold tokens in an escrow

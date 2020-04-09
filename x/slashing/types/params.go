@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/params"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
 )
 
 // Default parameter namespace

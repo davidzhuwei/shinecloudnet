@@ -4,11 +4,11 @@ import (
 	"crypto/rand"
 	"testing"
 
-	"github.com/barkisnet/barkis/store/dbadapter"
-	"github.com/barkisnet/barkis/store/gaskv"
-	"github.com/barkisnet/barkis/store/iavl"
-	"github.com/barkisnet/barkis/store/types"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/dbadapter"
+	"github.com/shinecloudfoundation/shinecloudnet/store/gaskv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/iavl"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 
 	"github.com/stretchr/testify/require"
 

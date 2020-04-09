@@ -3,9 +3,9 @@ package common
 import (
 	"fmt"
 
-	"github.com/barkisnet/barkis/client/context"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/distribution/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution/types"
 )
 
 // QueryParams actually queries distribution params.

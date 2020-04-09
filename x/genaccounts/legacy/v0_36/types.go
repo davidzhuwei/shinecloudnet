@@ -3,7 +3,7 @@
 package v0_36
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 const (

@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/barkisnet/barkis/baseapp"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/distribution"
-	"github.com/barkisnet/barkis/x/gov"
-	govsim "github.com/barkisnet/barkis/x/gov/simulation"
-	"github.com/barkisnet/barkis/x/simulation"
+	"github.com/shinecloudfoundation/shinecloudnet/baseapp"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov"
+	govsim "github.com/shinecloudfoundation/shinecloudnet/x/gov/simulation"
+	"github.com/shinecloudfoundation/shinecloudnet/x/simulation"
 )
 
 // SimulateMsgSetWithdrawAddress generates a MsgSetWithdrawAddress with random values.

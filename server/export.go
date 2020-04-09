@@ -12,10 +12,10 @@ import (
 	tmtypes "github.com/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/app/config"
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 const (

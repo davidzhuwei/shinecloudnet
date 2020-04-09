@@ -5,9 +5,9 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/barkisnet/barkis/client"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/supply/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply/internal/types"
 )
 
 // NewQuerier creates a querier for supply REST endpoints

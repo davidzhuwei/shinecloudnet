@@ -2,7 +2,7 @@
 // nolint
 package v0_36
 
-import v034auth "github.com/barkisnet/barkis/x/auth/legacy/v0_34"
+import v034auth "github.com/shinecloudfoundation/shinecloudnet/x/auth/legacy/v0_34"
 
 const (
 	ModuleName = "auth"

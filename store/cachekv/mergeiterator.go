@@ -3,7 +3,7 @@ package cachekv
 import (
 	"bytes"
 
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 // cacheMergeIterator merges a parent Iterator and a cache Iterator.

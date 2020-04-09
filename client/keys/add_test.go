@@ -8,8 +8,8 @@ import (
 
 	"github.com/tendermint/tendermint/libs/cli"
 
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/tests"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
 )
 
 func Test_runAddCmdBasic(t *testing.T) {

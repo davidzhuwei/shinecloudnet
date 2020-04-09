@@ -8,7 +8,7 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
 
 	abci "github.com/tendermint/tendermint/abci/types"
 )

@@ -3,7 +3,7 @@ package rest
 import (
 	"github.com/gorilla/mux"
 
-	"github.com/barkisnet/barkis/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
 )
 
 // RegisterRoutes registers staking-related REST handlers to a router

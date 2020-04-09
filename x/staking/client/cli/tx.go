@@ -12,14 +12,14 @@ import (
 	cfg "github.com/tendermint/tendermint/config"
 	"github.com/tendermint/tendermint/crypto"
 
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/version"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/auth/client/utils"
-	"github.com/barkisnet/barkis/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/version"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/client/utils"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 // GetTxCmd returns the transaction commands for this module

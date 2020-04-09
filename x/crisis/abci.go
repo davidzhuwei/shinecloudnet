@@ -1,7 +1,7 @@
 package crisis
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // check all registered invariants

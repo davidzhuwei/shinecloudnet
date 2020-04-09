@@ -1,8 +1,8 @@
 package v0_36
 
 import (
-	"github.com/barkisnet/barkis/types"
-	v034auth "github.com/barkisnet/barkis/x/auth/legacy/v0_34"
+	"github.com/shinecloudfoundation/shinecloudnet/types"
+	v034auth "github.com/shinecloudfoundation/shinecloudnet/x/auth/legacy/v0_34"
 	"testing"
 
 	"github.com/stretchr/testify/require"

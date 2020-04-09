@@ -3,9 +3,9 @@ package client
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/x/gov/client/rest"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov/client/rest"
 )
 
 // function to create the rest handler

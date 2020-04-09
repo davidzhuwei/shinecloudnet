@@ -13,16 +13,16 @@ import (
 	tmtypes "github.com/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/app"
-	"github.com/barkisnet/barkis/baseapp"
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/server"
-	"github.com/barkisnet/barkis/store"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/genaccounts"
-	genaccscli "github.com/barkisnet/barkis/x/genaccounts/client/cli"
-	genutilcli "github.com/barkisnet/barkis/x/genutil/client/cli"
-	"github.com/barkisnet/barkis/x/staking"
+	"github.com/shinecloudfoundation/shinecloudnet/app"
+	"github.com/shinecloudfoundation/shinecloudnet/baseapp"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/server"
+	"github.com/shinecloudfoundation/shinecloudnet/store"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genaccounts"
+	genaccscli "github.com/shinecloudfoundation/shinecloudnet/x/genaccounts/client/cli"
+	genutilcli "github.com/shinecloudfoundation/shinecloudnet/x/genutil/client/cli"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking"
 )
 
 // barkisd custom flags

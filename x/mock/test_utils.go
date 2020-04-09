@@ -5,14 +5,14 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/barkisnet/barkis/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
 
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/crypto"
 
-	"github.com/barkisnet/barkis/baseapp"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/baseapp"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // BigInterval is a representation of the interval [lo, hi), where

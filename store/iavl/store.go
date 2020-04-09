@@ -5,10 +5,10 @@ import (
 	"io"
 	"sync"
 
-	"github.com/barkisnet/barkis/store/cachekv"
-	serrors "github.com/barkisnet/barkis/store/errors"
-	"github.com/barkisnet/barkis/store/tracekv"
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/cachekv"
+	serrors "github.com/shinecloudfoundation/shinecloudnet/store/errors"
+	"github.com/shinecloudfoundation/shinecloudnet/store/tracekv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 
 	"github.com/pkg/errors"
 	"github.com/tendermint/iavl"

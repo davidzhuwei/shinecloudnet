@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/staking/exported"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/exported"
 )
 
 // DVPair is struct that just has a delegator-validator pair with no other data.

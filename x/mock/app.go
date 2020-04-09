@@ -14,11 +14,11 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	bam "github.com/barkisnet/barkis/baseapp"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/params"
+	bam "github.com/shinecloudfoundation/shinecloudnet/baseapp"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
 )
 
 const chainID = ""

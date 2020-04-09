@@ -1,6 +1,6 @@
 package types
 
-import "github.com/barkisnet/barkis/codec"
+import "github.com/shinecloudfoundation/shinecloudnet/codec"
 
 // Register the sdk message type
 func RegisterCodec(cdc *codec.Codec) {

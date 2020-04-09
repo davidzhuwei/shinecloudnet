@@ -8,9 +8,9 @@ import (
 	"github.com/tendermint/tendermint/libs/common"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/staking/keeper"
-	"github.com/barkisnet/barkis/x/staking/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 func NewHandler(k keeper.Keeper) sdk.Handler {

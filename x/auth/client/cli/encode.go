@@ -5,10 +5,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/x/auth/client/utils"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/client/utils"
 )
 
 // txEncodeRespStr implements a simple Stringer wrapper for a encoded tx.

@@ -3,10 +3,10 @@ package distribution
 import (
 	"fmt"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/distribution/keeper"
-	"github.com/barkisnet/barkis/x/distribution/types"
-	govtypes "github.com/barkisnet/barkis/x/gov/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution/types"
+	govtypes "github.com/shinecloudfoundation/shinecloudnet/x/gov/types"
 )
 
 func NewHandler(k keeper.Keeper) sdk.Handler {

@@ -10,9 +10,9 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/barkisnet/barkis/client/input"
-	"github.com/barkisnet/barkis/crypto/keys"
-	"github.com/barkisnet/barkis/crypto/keys/keyerror"
+	"github.com/shinecloudfoundation/shinecloudnet/client/input"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/keyerror"
 )
 
 const (

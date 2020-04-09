@@ -1,8 +1,8 @@
 package types
 
 import (
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/x/auth/exported"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/exported"
 )
 
 // RegisterCodec registers concrete types on the codec

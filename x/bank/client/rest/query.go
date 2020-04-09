@@ -5,10 +5,10 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/barkisnet/barkis/client/context"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/types/rest"
-	"github.com/barkisnet/barkis/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/types/rest"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
 )
 
 // query accountREST Handler

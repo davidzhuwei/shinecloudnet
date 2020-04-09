@@ -1,10 +1,10 @@
 package genaccounts
 
 import (
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	authexported "github.com/barkisnet/barkis/x/auth/exported"
-	"github.com/barkisnet/barkis/x/genaccounts/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	authexported "github.com/shinecloudfoundation/shinecloudnet/x/auth/exported"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genaccounts/internal/types"
 )
 
 // InitGenesis initializes accounts and deliver genesis transactions

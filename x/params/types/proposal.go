@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	sdk "github.com/barkisnet/barkis/types"
-	govtypes "github.com/barkisnet/barkis/x/gov/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	govtypes "github.com/shinecloudfoundation/shinecloudnet/x/gov/types"
 )
 
 const (

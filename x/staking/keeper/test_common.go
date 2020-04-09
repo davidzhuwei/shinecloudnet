@@ -16,14 +16,14 @@ import (
 	tmtypes "github.com/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/store"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/bank"
-	"github.com/barkisnet/barkis/x/params"
-	"github.com/barkisnet/barkis/x/staking/types"
-	"github.com/barkisnet/barkis/x/supply"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/store"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply"
 )
 
 // dummy addresses used for testing

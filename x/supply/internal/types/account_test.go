@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 	"github.com/tendermint/tendermint/crypto"
 	"gopkg.in/yaml.v2"
 

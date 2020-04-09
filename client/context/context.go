@@ -17,11 +17,11 @@ import (
 	tmliteProxy "github.com/tendermint/tendermint/lite/proxy"
 	rpcclient "github.com/tendermint/tendermint/rpc/client"
 
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/client/keys"
-	"github.com/barkisnet/barkis/codec"
-	cryptokeys "github.com/barkisnet/barkis/crypto/keys"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/client/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	cryptokeys "github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 var (

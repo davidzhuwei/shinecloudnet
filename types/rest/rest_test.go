@@ -13,10 +13,10 @@ import (
 	"github.com/tendermint/tendermint/crypto"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 type mockResponseWriter struct{}

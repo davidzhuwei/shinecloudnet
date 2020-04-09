@@ -7,7 +7,7 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/tests/mocks"
+	"github.com/shinecloudfoundation/shinecloudnet/tests/mocks"
 )
 
 var dummyError = errors.New("dummy")

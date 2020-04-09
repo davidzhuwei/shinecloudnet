@@ -3,10 +3,10 @@ package keeper
 import (
 	"fmt"
 
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/distribution/types"
-	"github.com/barkisnet/barkis/x/params"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
 
 	"github.com/tendermint/tendermint/libs/log"
 )

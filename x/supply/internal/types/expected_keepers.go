@@ -1,8 +1,8 @@
 package types
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/exported"
 )
 
 // AccountKeeper defines the expected account keeper (noalias)

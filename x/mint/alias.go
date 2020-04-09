@@ -6,8 +6,8 @@
 package mint
 
 import (
-	"github.com/barkisnet/barkis/x/mint/internal/keeper"
-	"github.com/barkisnet/barkis/x/mint/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mint/internal/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mint/internal/types"
 )
 
 const (

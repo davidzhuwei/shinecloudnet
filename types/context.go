@@ -8,8 +8,8 @@ import (
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/libs/log"
 
-	"github.com/barkisnet/barkis/store/gaskv"
-	stypes "github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/gaskv"
+	stypes "github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 /*

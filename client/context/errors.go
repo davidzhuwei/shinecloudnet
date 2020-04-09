@@ -3,7 +3,7 @@ package context
 import (
 	"fmt"
 
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // ErrInvalidAccount returns a standardized error reflecting that a given

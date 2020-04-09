@@ -13,12 +13,12 @@ import (
 	"github.com/tendermint/tendermint/libs/common"
 	"github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/app/config"
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/types/module"
-	"github.com/barkisnet/barkis/x/genutil"
+	"github.com/shinecloudfoundation/shinecloudnet/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/types/module"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil"
 )
 
 const (

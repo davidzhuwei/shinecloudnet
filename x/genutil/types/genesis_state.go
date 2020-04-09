@@ -8,9 +8,9 @@ import (
 	"github.com/tendermint/tendermint/libs/common"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/codec"
-	authtypes "github.com/barkisnet/barkis/x/auth/types"
-	stakingtypes "github.com/barkisnet/barkis/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	authtypes "github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
+	stakingtypes "github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 // GenesisState defines the raw genesis transaction in JSON

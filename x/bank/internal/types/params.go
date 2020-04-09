@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/barkisnet/barkis/x/params"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
 )
 
 const (

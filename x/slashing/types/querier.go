@@ -1,7 +1,7 @@
 package types
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // QuerySigningInfoParams defines the params for the following queries:

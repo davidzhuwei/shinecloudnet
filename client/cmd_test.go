@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/client"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
 )
 
 func TestValidateCmd(t *testing.T) {

@@ -11,14 +11,14 @@ import (
 	cfg "github.com/tendermint/tendermint/config"
 	"github.com/tendermint/tendermint/crypto"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/types/module"
-	authtypes "github.com/barkisnet/barkis/x/auth/types"
-	"github.com/barkisnet/barkis/x/staking/client/cli"
-	"github.com/barkisnet/barkis/x/staking/client/rest"
-	"github.com/barkisnet/barkis/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/types/module"
+	authtypes "github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/client/cli"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/client/rest"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 var (

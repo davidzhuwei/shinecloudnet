@@ -8,8 +8,8 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/staking/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 // TODO integrate with test_common.go helper (CreateTestInput)

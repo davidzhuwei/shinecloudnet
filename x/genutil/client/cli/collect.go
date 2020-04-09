@@ -9,11 +9,11 @@ import (
 	"github.com/tendermint/tendermint/libs/cli"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/app/config"
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/x/genutil"
-	"github.com/barkisnet/barkis/x/genutil/types"
+	"github.com/shinecloudfoundation/shinecloudnet/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil/types"
 )
 
 const flagGenTxDir = "gentx-dir"

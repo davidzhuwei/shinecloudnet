@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/store/prefix"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/prefix"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 func TestKeeper(t *testing.T) {

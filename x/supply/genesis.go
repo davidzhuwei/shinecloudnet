@@ -1,9 +1,9 @@
 package supply
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	autypes "github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/supply/internal/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	autypes "github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply/internal/types"
 )
 
 // InitGenesis sets supply information for genesis.

@@ -14,8 +14,8 @@ import (
 	rpcclient "github.com/tendermint/tendermint/rpc/client"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/store/rootmulti"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/rootmulti"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // GetNode returns an RPC client. If the context's client is not defined, an

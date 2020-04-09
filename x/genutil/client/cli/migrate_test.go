@@ -12,9 +12,9 @@ import (
 	"github.com/tendermint/tendermint/libs/cli"
 	"github.com/tendermint/tendermint/libs/log"
 
-	appconfig "github.com/barkisnet/barkis/app/config"
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/tests"
+	appconfig "github.com/shinecloudfoundation/shinecloudnet/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
 )
 
 func setupCmd(genesisTime string, chainId string) *cobra.Command {

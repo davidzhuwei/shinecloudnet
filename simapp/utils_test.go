@@ -9,20 +9,20 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
 	"github.com/tendermint/tendermint/crypto/ed25519"
 	cmn "github.com/tendermint/tendermint/libs/common"
 
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/distribution"
-	distr "github.com/barkisnet/barkis/x/distribution"
-	"github.com/barkisnet/barkis/x/gov"
-	"github.com/barkisnet/barkis/x/mint"
-	"github.com/barkisnet/barkis/x/slashing"
-	"github.com/barkisnet/barkis/x/staking"
-	"github.com/barkisnet/barkis/x/supply"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution"
+	distr "github.com/shinecloudfoundation/shinecloudnet/x/distribution"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mint"
+	"github.com/shinecloudfoundation/shinecloudnet/x/slashing"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply"
 
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 var (

@@ -10,9 +10,9 @@ import (
 	cmn "github.com/tendermint/tendermint/libs/common"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 
-	"github.com/barkisnet/barkis/store/tracekv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/tracekv"
 )
 
 // If value is nil but deleted is false, it means the parent doesn't have the

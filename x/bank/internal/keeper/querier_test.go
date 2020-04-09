@@ -8,9 +8,9 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	sdk "github.com/barkisnet/barkis/types"
-	authtypes "github.com/barkisnet/barkis/x/auth/types"
-	"github.com/barkisnet/barkis/x/bank/internal/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	authtypes "github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
 )
 
 func TestBalances(t *testing.T) {

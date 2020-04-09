@@ -1,7 +1,7 @@
 package bank
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // GenesisState is the bank state that must be provided at genesis.

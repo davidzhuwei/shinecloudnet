@@ -3,8 +3,8 @@ package slashing
 import (
 	"fmt"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/slashing/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/slashing/types"
 )
 
 func NewHandler(k Keeper) sdk.Handler {

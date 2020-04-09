@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	store "github.com/barkisnet/barkis/store/types"
+	store "github.com/shinecloudfoundation/shinecloudnet/store/types"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -16,8 +16,8 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 var (

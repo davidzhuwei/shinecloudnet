@@ -11,8 +11,8 @@ import (
 	tmcrypto "github.com/tendermint/tendermint/crypto"
 	tmsecp256k1 "github.com/tendermint/tendermint/crypto/secp256k1"
 
-	"github.com/barkisnet/barkis/crypto/keys/hd"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/hd"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 var (

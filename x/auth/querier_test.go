@@ -8,7 +8,7 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/barkisnet/barkis/x/auth/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
 )
 
 func Test_queryAccount(t *testing.T) {

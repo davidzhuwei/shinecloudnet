@@ -9,12 +9,12 @@ import (
 	"github.com/spf13/viper"
 	"github.com/tendermint/tendermint/crypto/multisig"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth/client/utils"
-	"github.com/barkisnet/barkis/x/auth/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/client/utils"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
 )
 
 const (

@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
 )
 
 // For https://github.com/cosmos/cosmos-sdk/issues/3899

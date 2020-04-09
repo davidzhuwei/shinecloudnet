@@ -14,9 +14,9 @@ import (
 
 	bip39 "github.com/cosmos/go-bip39"
 
-	"github.com/barkisnet/barkis/crypto/keys/hd"
-	"github.com/barkisnet/barkis/tests"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/hd"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // If ledger support (build tag) has been enabled, which implies a CGO dependency,

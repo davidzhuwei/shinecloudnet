@@ -1,6 +1,6 @@
 package utils
 
-import "github.com/barkisnet/barkis/x/gov/types"
+import "github.com/shinecloudfoundation/shinecloudnet/x/gov/types"
 
 // NormalizeVoteOption - normalize user specified vote option
 func NormalizeVoteOption(option string) string {

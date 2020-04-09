@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"strings"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	authexported "github.com/barkisnet/barkis/x/auth/exported"
-	"github.com/barkisnet/barkis/x/supply"
-	supplyexported "github.com/barkisnet/barkis/x/supply/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	authexported "github.com/shinecloudfoundation/shinecloudnet/x/auth/exported"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply"
+	supplyexported "github.com/shinecloudfoundation/shinecloudnet/x/supply/exported"
 )
 
 // GenesisAccount is a struct for account initialization used exclusively during genesis

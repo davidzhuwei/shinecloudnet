@@ -11,14 +11,14 @@ import (
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/store"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/bank"
-	"github.com/barkisnet/barkis/x/params"
-	"github.com/barkisnet/barkis/x/supply/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/store"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply/internal/types"
 
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // nolint: deadcode unused

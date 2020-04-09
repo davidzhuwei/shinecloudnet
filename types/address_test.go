@@ -13,7 +13,7 @@ import (
 	"github.com/tendermint/tendermint/crypto/ed25519"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
 
-	"github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 var invalidStrs = []string{

@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"io/ioutil"
 
-	"github.com/barkisnet/barkis/client/input"
+	"github.com/shinecloudfoundation/shinecloudnet/client/input"
 	"github.com/spf13/cobra"
 )
 

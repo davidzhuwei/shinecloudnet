@@ -5,9 +5,9 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/store/cachekv"
-	"github.com/barkisnet/barkis/store/tracekv"
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/cachekv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/tracekv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 // Wrapper type for dbm.Db with implementation of KVStore

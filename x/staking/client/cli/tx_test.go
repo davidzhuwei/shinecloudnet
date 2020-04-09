@@ -10,9 +10,9 @@ import (
 	"github.com/tendermint/tendermint/crypto"
 	"github.com/tendermint/tendermint/libs/log"
 
-	appconfig "github.com/barkisnet/barkis/app/config"
-	"github.com/barkisnet/barkis/server"
-	sdk "github.com/barkisnet/barkis/types"
+	appconfig "github.com/shinecloudfoundation/shinecloudnet/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/server"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 func TestPrepareFlagsForTxCreateValidator(t *testing.T) {

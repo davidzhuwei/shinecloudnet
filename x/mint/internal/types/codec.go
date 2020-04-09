@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/barkisnet/barkis/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
 )
 
 // generic sealed codec to be used throughout this module

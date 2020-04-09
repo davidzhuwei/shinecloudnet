@@ -11,9 +11,9 @@ import (
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	sdk "github.com/barkisnet/barkis/types"
-	keep "github.com/barkisnet/barkis/x/staking/keeper"
-	"github.com/barkisnet/barkis/x/staking/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	keep "github.com/shinecloudfoundation/shinecloudnet/x/staking/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 func TestInitGenesis(t *testing.T) {

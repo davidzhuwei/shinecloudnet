@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/x/genutil"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil"
 )
 
 var basic034Gov = []byte(`

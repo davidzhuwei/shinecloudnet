@@ -12,7 +12,7 @@ import (
 	"github.com/tendermint/tendermint/privval"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/server"
+	"github.com/shinecloudfoundation/shinecloudnet/server"
 )
 
 // ExportGenesisFile creates and writes the genesis configuration to disk. An

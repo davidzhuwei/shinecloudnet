@@ -18,10 +18,10 @@ import (
 	"github.com/tendermint/tendermint/crypto/multisig"
 	"github.com/tendermint/tendermint/libs/cli"
 
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/client/input"
-	"github.com/barkisnet/barkis/crypto/keys"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/client/input"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 const (

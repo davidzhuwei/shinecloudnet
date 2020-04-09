@@ -8,12 +8,12 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	authexported "github.com/barkisnet/barkis/x/auth/exported"
-	authtypes "github.com/barkisnet/barkis/x/auth/types"
-	"github.com/barkisnet/barkis/x/genutil/types"
-	stakingtypes "github.com/barkisnet/barkis/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	authexported "github.com/shinecloudfoundation/shinecloudnet/x/auth/exported"
+	authtypes "github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil/types"
+	stakingtypes "github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 // SetGenTxsInAppGenesisState - sets the genesis transactions in the app genesis state

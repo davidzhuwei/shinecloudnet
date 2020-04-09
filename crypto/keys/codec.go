@@ -3,8 +3,8 @@ package keys
 import (
 	cryptoAmino "github.com/tendermint/tendermint/crypto/encoding/amino"
 
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/crypto/keys/hd"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/hd"
 )
 
 var cdc *codec.Codec

@@ -6,12 +6,12 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/barkisnet/barkis/x/distribution/client/common"
-	"github.com/barkisnet/barkis/x/distribution/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution/client/common"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution/types"
 
-	"github.com/barkisnet/barkis/client/context"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/types/rest"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/types/rest"
 )
 
 func registerQueryRoutes(cliCtx context.CLIContext, r *mux.Router, queryRoute string) {

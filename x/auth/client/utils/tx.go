@@ -13,13 +13,13 @@ import (
 	"github.com/tendermint/tendermint/crypto/tmhash"
 	cmn "github.com/tendermint/tendermint/libs/common"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/client/input"
-	"github.com/barkisnet/barkis/client/keys"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	authtypes "github.com/barkisnet/barkis/x/auth/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/client/input"
+	"github.com/shinecloudfoundation/shinecloudnet/client/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	authtypes "github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
 )
 
 // GasEstimateResponse defines a response definition for tx gas estimation.

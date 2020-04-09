@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/tests"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
 )
 
 func Test_openDB(t *testing.T) {

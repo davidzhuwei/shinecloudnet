@@ -8,9 +8,9 @@ import (
 	"github.com/spf13/cobra"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/app/config"
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/types/module"
+	"github.com/shinecloudfoundation/shinecloudnet/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/types/module"
 )
 
 // Validate genesis command takes

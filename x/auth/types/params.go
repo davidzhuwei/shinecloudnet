@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/barkisnet/barkis/x/params/subspace"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params/subspace"
 )
 
 // DefaultParamspace defines the default auth module parameter subspace

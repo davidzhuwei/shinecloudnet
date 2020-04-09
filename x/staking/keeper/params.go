@@ -3,9 +3,9 @@ package keeper
 import (
 	"time"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/params"
-	"github.com/barkisnet/barkis/x/staking/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 // Default parameter namespace

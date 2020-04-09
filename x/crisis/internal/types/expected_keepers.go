@@ -1,7 +1,7 @@
 package types
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // SupplyKeeper defines the expected supply keeper (noalias)

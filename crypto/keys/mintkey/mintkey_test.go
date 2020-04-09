@@ -7,8 +7,8 @@ import (
 	cryptoAmino "github.com/tendermint/tendermint/crypto/encoding/amino"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
 
-	"github.com/barkisnet/barkis/crypto/keys"
-	"github.com/barkisnet/barkis/crypto/keys/mintkey"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/mintkey"
 )
 
 func TestArmorUnarmorPrivKey(t *testing.T) {

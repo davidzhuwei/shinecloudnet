@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/barkisnet/barkis/baseapp"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/simulation"
-	"github.com/barkisnet/barkis/x/staking"
-	"github.com/barkisnet/barkis/x/staking/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/baseapp"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/simulation"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/keeper"
 )
 
 // SimulateMsgCreateValidator generates a MsgCreateValidator with random values

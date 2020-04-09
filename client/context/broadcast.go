@@ -3,8 +3,8 @@ package context
 import (
 	"fmt"
 
-	"github.com/barkisnet/barkis/client/flags"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // BroadcastTx broadcasts a transactions either synchronously or asynchronously

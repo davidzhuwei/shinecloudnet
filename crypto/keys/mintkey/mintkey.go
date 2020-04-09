@@ -13,7 +13,7 @@ import (
 
 	cmn "github.com/tendermint/tendermint/libs/common"
 
-	"github.com/barkisnet/barkis/crypto/keys/keyerror"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/keyerror"
 )
 
 const (

@@ -1,11 +1,11 @@
 package v0_36
 
 import (
-	"github.com/barkisnet/barkis/types"
-	v034distr "github.com/barkisnet/barkis/x/distribution/legacy/v0_34"
-	v034accounts "github.com/barkisnet/barkis/x/genaccounts/legacy/v0_34"
-	v034gov "github.com/barkisnet/barkis/x/gov/legacy/v0_34"
-	v034staking "github.com/barkisnet/barkis/x/staking/legacy/v0_34"
+	"github.com/shinecloudfoundation/shinecloudnet/types"
+	v034distr "github.com/shinecloudfoundation/shinecloudnet/x/distribution/legacy/v0_34"
+	v034accounts "github.com/shinecloudfoundation/shinecloudnet/x/genaccounts/legacy/v0_34"
+	v034gov "github.com/shinecloudfoundation/shinecloudnet/x/gov/legacy/v0_34"
+	v034staking "github.com/shinecloudfoundation/shinecloudnet/x/staking/legacy/v0_34"
 	"github.com/tendermint/tendermint/crypto"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
 	"testing"

@@ -3,7 +3,7 @@ package types
 import (
 	"fmt"
 
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // names used as root for pool module accounts:

@@ -10,10 +10,10 @@ import (
 	"github.com/tendermint/tendermint/crypto/multisig"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
 
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/crypto/keys"
-	"github.com/barkisnet/barkis/tests"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 func Test_multiSigKey_Properties(t *testing.T) {

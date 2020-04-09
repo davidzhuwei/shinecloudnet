@@ -1,8 +1,8 @@
 package asset
 
 import (
-	"github.com/barkisnet/barkis/x/asset/internal/keeper"
-	"github.com/barkisnet/barkis/x/asset/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/asset/internal/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/asset/internal/types"
 )
 
 const (

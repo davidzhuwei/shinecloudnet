@@ -1,7 +1,7 @@
 package rootmulti
 
 import (
-	"github.com/barkisnet/barkis/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
 )
 
 var cdc = codec.New()

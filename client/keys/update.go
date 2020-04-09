@@ -8,9 +8,9 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/spf13/cobra"
 
-	"github.com/barkisnet/barkis/client/input"
-	"github.com/barkisnet/barkis/crypto/keys"
-	"github.com/barkisnet/barkis/crypto/keys/keyerror"
+	"github.com/shinecloudfoundation/shinecloudnet/client/input"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/keyerror"
 )
 
 func updateKeyCommand() *cobra.Command {

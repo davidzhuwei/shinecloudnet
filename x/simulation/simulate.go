@@ -13,8 +13,8 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/barkisnet/barkis/baseapp"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/baseapp"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // AppStateFn returns the app state json bytes, the genesis accounts, and the chain identifier

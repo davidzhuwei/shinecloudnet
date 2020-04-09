@@ -5,7 +5,7 @@ PACKAGES_SIMTEST=$(shell go list ./... | grep '/simulation')
 VERSION := $(shell echo $(shell git describe --tags --always) | sed 's/^v//')
 COMMIT := $(shell git log -1 --format='%H')
 LEDGER_ENABLED ?= true
-SDK_PACK := $(shell go list -m github.com/barkisnet/barkis | sed  's/ /\@/g')
+SDK_PACK := $(shell go list -m github.com/shinecloudfoundation/shinecloudnet | sed  's/ /\@/g')
 BINDIR ?= $(GOPATH)/bin
 SIMAPP = ./simapp
 MOCKS_DIR = $(CURDIR)/tests/mocks
@@ -38,7 +38,7 @@ ifeq ($(LEDGER_ENABLED),true)
   else
     UNAME_S = $(shell uname -s)
     ifeq ($(UNAME_S),OpenBSD)
-      $(warning OpenBSD detected, disabling ledger support (https://github.com/barkisnet/barkis/issues/1988))
+      $(warning OpenBSD detected, disabling ledger support)
     else
       GCC = $(shell command -v gcc 2> /dev/null)
       ifeq ($(GCC),)
@@ -63,15 +63,15 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 # process linker flags
 
-ldflags = -X github.com/barkisnet/barkis/version.Name=barkis \
-		  -X github.com/barkisnet/barkis/version.ServerName=barkisd \
-		  -X github.com/barkisnet/barkis/version.ClientName=barkiscli \
-		  -X github.com/barkisnet/barkis/version.Version=$(VERSION) \
-		  -X github.com/barkisnet/barkis/version.Commit=$(COMMIT) \
-		  -X "github.com/barkisnet/barkis/version.BuildTags=$(build_tags_comma_sep)"
+ldflags = -X github.com/shinecloudfoundation/shinecloudnet/version.Name=shine \
+		  -X github.com/shinecloudfoundation/shinecloudnet/version.ServerName=shined \
+		  -X github.com/shinecloudfoundation/shinecloudnet/version.ClientName=shinecli \
+		  -X github.com/shinecloudfoundation/shinecloudnet/version.Version=$(VERSION) \
+		  -X github.com/shinecloudfoundation/shinecloudnet/version.Commit=$(COMMIT) \
+		  -X "github.com/shinecloudfoundation/shinecloudnet/version.BuildTags=$(build_tags_comma_sep)"
 
 ifeq ($(WITH_CLEVELDB),yes)
-  ldflags += -X github.com/barkisnet/barkis/types.DBBackend=cleveldb
+  ldflags += -X github.com/shinecloudfoundation/shinecloudnet/types.DBBackend=cleveldb
   ldflags += $(LDFLAGS)
 endif
 ldflags := $(strip $(ldflags))
@@ -83,11 +83,11 @@ include contrib/devtools/Makefile
 
 build: go.sum
 ifeq ($(OS),Windows_NT)
-	go build -mod=readonly $(BUILD_FLAGS) -o build/barkisd.exe ./cmd/barkisd
-	go build -mod=readonly $(BUILD_FLAGS) -o build/barkiscli.exe ./cmd/barkiscli
+	go build -mod=readonly $(BUILD_FLAGS) -o build/shined.exe ./cmd/shined
+	go build -mod=readonly $(BUILD_FLAGS) -o build/shinecli.exe ./cmd/shinecli
 else
-	go build -mod=readonly $(BUILD_FLAGS) -o build/barkisd ./cmd/barkisd
-	go build -mod=readonly $(BUILD_FLAGS) -o build/barkiscli ./cmd/barkiscli
+	go build -mod=readonly $(BUILD_FLAGS) -o build/shined ./cmd/shined
+	go build -mod=readonly $(BUILD_FLAGS) -o build/shinecli ./cmd/shinecli
 endif
 
 build-linux: go.sum
@@ -101,8 +101,8 @@ else
 endif
 
 install: go.sum check-ledger
-	go install -mod=readonly $(BUILD_FLAGS) ./cmd/barkisd
-	go install -mod=readonly $(BUILD_FLAGS) ./cmd/barkiscli
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/shined
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/shinecli
 
 install-debug: go.sum
 	go install -mod=readonly $(BUILD_FLAGS) ./cmd/barkisdebug
@@ -123,7 +123,7 @@ go.sum: go.mod
 draw-deps:
 	@# requires brew install graphviz or apt-get install graphviz
 	go get github.com/RobotsAndPencils/goviz
-	@goviz -i ./cmd/barkisd -d 2 | dot -Tpng -o dependency-graph.png
+	@goviz -i ./cmd/shined -d 2 | dot -Tpng -o dependency-graph.png
 
 clean:
 	rm -rf snapcraft-local.yaml build/
@@ -137,10 +137,10 @@ distclean: clean
 test: test_unit
 
 test_ledger_mock:
-	@go test -mod=readonly `go list github.com/barkisnet/barkis/crypto` -tags='cgo ledger test_ledger_mock'
+	@go test -mod=readonly `go list github.com/shinecloudfoundation/shinecloudnet/crypto` -tags='cgo ledger test_ledger_mock'
 
 test_ledger: test_ledger_mock
-	@go test -mod=readonly -v `go list github.com/barkisnet/barkis/crypto` -tags='cgo ledger'
+	@go test -mod=readonly -v `go list github.com/shinecloudfoundation/shinecloudnet/crypto` -tags='cgo ledger'
 
 test_unit:
 	@VERSION=$(VERSION) go test -mod=readonly $(PACKAGES_NOSIMULATION) -tags='ledger test_ledger_mock'
@@ -222,7 +222,7 @@ lint: golangci-lint
 format: tools
 	find . -name '*.go' -type f -not -path "./vendor*" -not -path "*.git*" -not -path "./client/lcd/statik/statik.go" | xargs gofmt -w -s
 	find . -name '*.go' -type f -not -path "./vendor*" -not -path "*.git*" -not -path "./client/lcd/statik/statik.go" | xargs misspell -w
-	find . -name '*.go' -type f -not -path "./vendor*" -not -path "*.git*" -not -path "./client/lcd/statik/statik.go" | xargs goimports -w -local github.com/barkisnet/barkis
+	find . -name '*.go' -type f -not -path "./vendor*" -not -path "*.git*" -not -path "./client/lcd/statik/statik.go" | xargs goimports -w -local github.com/shinecloudfoundation/shinecloudnet
 .PHONY: format
 
 check: check-unit check-build
@@ -252,7 +252,7 @@ build-docker-barkisdnode:
 
 # Run a 4-node testnet locally
 localnet-start: localnet-stop
-	@if ! [ -f build/node0/barkisd/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/barkisd:Z tendermint/barkisdnode testnet --v 4 -o . --starting-ip-address 192.168.10.2 ; fi
+	@if ! [ -f build/node0/shined/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/shined:Z tendermint/barkisdnode testnet --v 4 -o . --starting-ip-address 192.168.10.2 ; fi
 	docker-compose up -d
 
 # Stop testnet
@@ -261,39 +261,39 @@ localnet-stop:
 
 localnet-reset:
 	docker-compose down
-	docker run --rm -v $(CURDIR)/build:/barkisd:Z tendermint/barkisdnode unsafe-reset-all --home /barkisd/node0/barkisd
-	docker run --rm -v $(CURDIR)/build:/barkisd:Z tendermint/barkisdnode unsafe-reset-all --home /barkisd/node1/barkisd
-	docker run --rm -v $(CURDIR)/build:/barkisd:Z tendermint/barkisdnode unsafe-reset-all --home /barkisd/node2/barkisd
-	docker run --rm -v $(CURDIR)/build:/barkisd:Z tendermint/barkisdnode unsafe-reset-all --home /barkisd/node3/barkisd
+	docker run --rm -v $(CURDIR)/build:/shined:Z tendermint/barkisdnode unsafe-reset-all --home /shined/node0/shined
+	docker run --rm -v $(CURDIR)/build:/shined:Z tendermint/barkisdnode unsafe-reset-all --home /shined/node1/shined
+	docker run --rm -v $(CURDIR)/build:/shined:Z tendermint/barkisdnode unsafe-reset-all --home /shined/node2/shined
+	docker run --rm -v $(CURDIR)/build:/shined:Z tendermint/barkisdnode unsafe-reset-all --home /shined/node3/shined
 
 setup-contract-tests-data:
 	echo 'Prepare data for the contract tests'
 	rm -rf /tmp/contract_tests ; \
 	mkdir /tmp/contract_tests ; \
 	cp "${GOPATH}/pkg/mod/${SDK_PACK}/client/lcd/swagger-ui/swagger.yaml" /tmp/contract_tests/swagger.yaml ; \
-	./build/barkisd init --home /tmp/contract_tests/.barkisd --chain-id lcd contract-tests ; \
+	./build/shined init --home /tmp/contract_tests/.shined --chain-id lcd contract-tests ; \
 	tar -xzf lcd_test/testdata/state.tar.gz -C /tmp/contract_tests/
 
-start-barkis: setup-contract-tests-data
-	./build/barkisd --home /tmp/contract_tests/.barkisd start &
+start-shine: setup-contract-tests-data
+	./build/shined --home /tmp/contract_tests/.shined start &
 	@sleep 2s
 
-setup-transactions: start-barkis
+setup-transactions: start-shine
 	@bash ./lcd_test/testdata/setup.sh
 
 run-lcd-contract-tests:
 	@echo "Running Barkis LCD for contract tests"
-	./build/barkiscli rest-server --laddr tcp://0.0.0.0:8080 --home /tmp/contract_tests/.barkiscli --node http://localhost:26657 --chain-id lcd --trust-node true
+	./build/shinecli rest-server --laddr tcp://0.0.0.0:8080 --home /tmp/contract_tests/.shinecli --node http://localhost:26657 --chain-id lcd --trust-node true
 
 contract-tests: setup-transactions
 	@echo "Running Barkis LCD for contract tests"
-	dredd && pkill barkisd
+	dredd && pkill shined
 
 # include simulations
 include sims.mk
 
 .PHONY: all build-linux install install-debug \
 	go-mod-cache draw-deps clean build \
-	setup-transactions setup-contract-tests-data start-barkis run-lcd-contract-tests contract-tests \
+	setup-transactions setup-contract-tests-data start-shine run-lcd-contract-tests contract-tests \
 	check check-all check-build check-cover check-ledger check-unit check-race
 

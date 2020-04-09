@@ -3,9 +3,9 @@ package bank
 import (
 	"fmt"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/bank/internal/keeper"
-	"github.com/barkisnet/barkis/x/bank/internal/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
 )
 
 // NewHandler returns a handler for "bank" type messages.

@@ -10,10 +10,10 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/store/dbadapter"
-	"github.com/barkisnet/barkis/store/prefix"
-	"github.com/barkisnet/barkis/store/tracekv"
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/dbadapter"
+	"github.com/shinecloudfoundation/shinecloudnet/store/prefix"
+	"github.com/shinecloudfoundation/shinecloudnet/store/tracekv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 func bz(s string) []byte { return []byte(s) }

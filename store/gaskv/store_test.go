@@ -6,9 +6,9 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/store/dbadapter"
-	"github.com/barkisnet/barkis/store/gaskv"
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/dbadapter"
+	"github.com/shinecloudfoundation/shinecloudnet/store/gaskv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 
 	"github.com/stretchr/testify/require"
 )

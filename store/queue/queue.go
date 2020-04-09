@@ -3,10 +3,10 @@ package store
 // TODO: make it independent from list
 /*
 import (
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 
-	"github.com/barkisnet/barkis/store/list"
+	"github.com/shinecloudfoundation/shinecloudnet/store/list"
 )
 
 // Key for the top element position in the queue

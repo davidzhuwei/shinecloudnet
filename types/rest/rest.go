@@ -14,9 +14,9 @@ import (
 
 	"github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 const (

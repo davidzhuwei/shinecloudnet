@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	sdk "github.com/barkisnet/barkis/types"
-	params "github.com/barkisnet/barkis/x/params/subspace"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	params "github.com/shinecloudfoundation/shinecloudnet/x/params/subspace"
 )
 
 // Parameter store key

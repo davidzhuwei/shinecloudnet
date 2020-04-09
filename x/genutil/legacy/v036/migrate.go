@@ -1,19 +1,19 @@
 package v036
 
 import (
-	"github.com/barkisnet/barkis/codec"
-	v034auth "github.com/barkisnet/barkis/x/auth/legacy/v0_34"
-	v036auth "github.com/barkisnet/barkis/x/auth/legacy/v0_36"
-	v034distr "github.com/barkisnet/barkis/x/distribution/legacy/v0_34"
-	v036distr "github.com/barkisnet/barkis/x/distribution/legacy/v0_36"
-	v034genAccounts "github.com/barkisnet/barkis/x/genaccounts/legacy/v0_34"
-	v036genAccounts "github.com/barkisnet/barkis/x/genaccounts/legacy/v0_36"
-	"github.com/barkisnet/barkis/x/genutil"
-	v034gov "github.com/barkisnet/barkis/x/gov/legacy/v0_34"
-	v036gov "github.com/barkisnet/barkis/x/gov/legacy/v0_36"
-	v034staking "github.com/barkisnet/barkis/x/staking/legacy/v0_34"
-	v036staking "github.com/barkisnet/barkis/x/staking/legacy/v0_36"
-	v036supply "github.com/barkisnet/barkis/x/supply/legacy/v0_36"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	v034auth "github.com/shinecloudfoundation/shinecloudnet/x/auth/legacy/v0_34"
+	v036auth "github.com/shinecloudfoundation/shinecloudnet/x/auth/legacy/v0_36"
+	v034distr "github.com/shinecloudfoundation/shinecloudnet/x/distribution/legacy/v0_34"
+	v036distr "github.com/shinecloudfoundation/shinecloudnet/x/distribution/legacy/v0_36"
+	v034genAccounts "github.com/shinecloudfoundation/shinecloudnet/x/genaccounts/legacy/v0_34"
+	v036genAccounts "github.com/shinecloudfoundation/shinecloudnet/x/genaccounts/legacy/v0_36"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil"
+	v034gov "github.com/shinecloudfoundation/shinecloudnet/x/gov/legacy/v0_34"
+	v036gov "github.com/shinecloudfoundation/shinecloudnet/x/gov/legacy/v0_36"
+	v034staking "github.com/shinecloudfoundation/shinecloudnet/x/staking/legacy/v0_34"
+	v036staking "github.com/shinecloudfoundation/shinecloudnet/x/staking/legacy/v0_36"
+	v036supply "github.com/shinecloudfoundation/shinecloudnet/x/supply/legacy/v0_36"
 )
 
 // Migrate migrates exported state from v0.34 to a v0.36 genesis state.

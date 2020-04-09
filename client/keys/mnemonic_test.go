@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/barkisnet/barkis/tests"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

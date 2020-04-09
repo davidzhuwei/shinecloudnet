@@ -6,12 +6,12 @@ import (
 
 	"github.com/tendermint/tendermint/crypto"
 
-	"github.com/barkisnet/barkis/baseapp"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/bank/internal/keeper"
-	"github.com/barkisnet/barkis/x/bank/internal/types"
-	"github.com/barkisnet/barkis/x/mock"
-	"github.com/barkisnet/barkis/x/simulation"
+	"github.com/shinecloudfoundation/shinecloudnet/baseapp"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mock"
+	"github.com/shinecloudfoundation/shinecloudnet/x/simulation"
 )
 
 // SendTx tests and runs a single msg send where both

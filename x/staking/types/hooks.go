@@ -1,7 +1,7 @@
 package types
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // combine multiple staking hooks, all hook functions are run in array sequence

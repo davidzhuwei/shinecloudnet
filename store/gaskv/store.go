@@ -3,7 +3,7 @@ package gaskv
 import (
 	"io"
 
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 var _ types.KVStore = &Store{}

@@ -5,9 +5,9 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/types/rest"
-	"github.com/barkisnet/barkis/x/auth/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/types/rest"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
 )
 
 // EncodeResp defines a tx encoding response.

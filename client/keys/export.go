@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/barkisnet/barkis/client/input"
+	"github.com/shinecloudfoundation/shinecloudnet/client/input"
 )
 
 func exportKeyCommand() *cobra.Command {

@@ -12,9 +12,9 @@ import (
 	"github.com/tendermint/tendermint/crypto/secp256k1"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	sdk "github.com/barkisnet/barkis/types"
-	keep "github.com/barkisnet/barkis/x/staking/keeper"
-	"github.com/barkisnet/barkis/x/staking/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	keep "github.com/shinecloudfoundation/shinecloudnet/x/staking/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 //______________________________________________________________________

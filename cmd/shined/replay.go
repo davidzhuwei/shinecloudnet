@@ -17,11 +17,11 @@ import (
 	tmstore "github.com/tendermint/tendermint/store"
 	tm "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/app"
-	"github.com/barkisnet/barkis/app/config"
-	"github.com/barkisnet/barkis/baseapp"
-	"github.com/barkisnet/barkis/store"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/app"
+	"github.com/shinecloudfoundation/shinecloudnet/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/baseapp"
+	"github.com/shinecloudfoundation/shinecloudnet/store"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 func replayCmd() *cobra.Command {

@@ -8,7 +8,7 @@ import (
 	bip39 "github.com/bartekn/go-bip39"
 	"github.com/spf13/cobra"
 
-	"github.com/barkisnet/barkis/client/input"
+	"github.com/shinecloudfoundation/shinecloudnet/client/input"
 )
 
 const (

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 const (

@@ -3,9 +3,9 @@ package crisis
 import (
 	"fmt"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/crisis/internal/keeper"
-	"github.com/barkisnet/barkis/x/crisis/internal/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/crisis/internal/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/crisis/internal/types"
 )
 
 // RouterKey

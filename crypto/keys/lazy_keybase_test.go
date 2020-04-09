@@ -8,9 +8,9 @@ import (
 	"github.com/tendermint/tendermint/crypto"
 	"github.com/tendermint/tendermint/crypto/ed25519"
 
-	"github.com/barkisnet/barkis/crypto/keys/hd"
-	"github.com/barkisnet/barkis/tests"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/hd"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 func TestNew(t *testing.T) {

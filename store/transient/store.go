@@ -3,9 +3,9 @@ package transient
 import (
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 
-	"github.com/barkisnet/barkis/store/dbadapter"
+	"github.com/shinecloudfoundation/shinecloudnet/store/dbadapter"
 )
 
 var _ types.Committer = (*Store)(nil)

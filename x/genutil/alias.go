@@ -5,7 +5,7 @@
 package genutil
 
 import (
-	"github.com/barkisnet/barkis/x/genutil/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil/types"
 )
 
 const (

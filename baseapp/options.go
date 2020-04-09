@@ -6,8 +6,8 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/store"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // File for storing in-package BaseApp optional functions,

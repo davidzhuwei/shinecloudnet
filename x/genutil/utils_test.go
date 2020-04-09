@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/barkisnet/barkis/tests"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
 
 	"github.com/stretchr/testify/require"
 )

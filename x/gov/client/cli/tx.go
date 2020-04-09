@@ -7,15 +7,15 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/version"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/auth/client/utils"
-	govutils "github.com/barkisnet/barkis/x/gov/client/utils"
-	"github.com/barkisnet/barkis/x/gov/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/version"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/client/utils"
+	govutils "github.com/shinecloudfoundation/shinecloudnet/x/gov/client/utils"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov/types"
 )
 
 // Proposal flags

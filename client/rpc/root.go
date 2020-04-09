@@ -3,7 +3,7 @@ package rpc
 import (
 	"github.com/gorilla/mux"
 
-	"github.com/barkisnet/barkis/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
 )
 
 // Register REST endpoints

@@ -11,8 +11,8 @@ import (
 	cmn "github.com/tendermint/tendermint/libs/common"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/store/errors"
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/errors"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 var (

@@ -3,8 +3,8 @@
 package v0_36
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	v034distr "github.com/barkisnet/barkis/x/distribution/legacy/v0_34"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	v034distr "github.com/shinecloudfoundation/shinecloudnet/x/distribution/legacy/v0_34"
 )
 
 // ----------------------------------------------------------------------------

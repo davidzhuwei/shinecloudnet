@@ -1,9 +1,9 @@
 package keeper
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/supply/exported"
-	"github.com/barkisnet/barkis/x/supply/internal/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply/exported"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply/internal/types"
 )
 
 // GetModuleAddress returns an address based on the module name

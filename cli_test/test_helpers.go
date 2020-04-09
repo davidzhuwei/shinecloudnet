@@ -10,26 +10,26 @@ import (
 	"testing"
 	"time"
 
-	"github.com/barkisnet/barkis/client"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
 
 	"github.com/stretchr/testify/require"
 
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/app"
+	"github.com/shinecloudfoundation/shinecloudnet/app"
 
-	clientkeys "github.com/barkisnet/barkis/client/keys"
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/crypto/keys"
-	"github.com/barkisnet/barkis/server"
-	"github.com/barkisnet/barkis/simapp"
-	"github.com/barkisnet/barkis/tests"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/distribution"
-	"github.com/barkisnet/barkis/x/gov"
-	"github.com/barkisnet/barkis/x/slashing"
-	"github.com/barkisnet/barkis/x/staking"
+	clientkeys "github.com/shinecloudfoundation/shinecloudnet/client/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/server"
+	"github.com/shinecloudfoundation/shinecloudnet/simapp"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov"
+	"github.com/shinecloudfoundation/shinecloudnet/x/slashing"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking"
 )
 
 const (

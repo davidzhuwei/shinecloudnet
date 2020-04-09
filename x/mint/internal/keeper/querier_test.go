@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/x/mint/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mint/internal/types"
 
 	abci "github.com/tendermint/tendermint/abci/types"
 )

@@ -6,10 +6,10 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/spf13/cobra"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/types/module"
-	"github.com/barkisnet/barkis/x/params/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/types/module"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params/types"
 )
 
 var (

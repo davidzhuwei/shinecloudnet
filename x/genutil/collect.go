@@ -15,12 +15,12 @@ import (
 	cfg "github.com/tendermint/tendermint/config"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	authexported "github.com/barkisnet/barkis/x/auth/exported"
-	authtypes "github.com/barkisnet/barkis/x/auth/types"
-	"github.com/barkisnet/barkis/x/genutil/types"
-	stakingtypes "github.com/barkisnet/barkis/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	authexported "github.com/shinecloudfoundation/shinecloudnet/x/auth/exported"
+	authtypes "github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil/types"
+	stakingtypes "github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 // GenAppStateFromConfig gets the genesis app state from the config

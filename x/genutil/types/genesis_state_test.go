@@ -6,9 +6,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/crypto/ed25519"
 
-	sdk "github.com/barkisnet/barkis/types"
-	authtypes "github.com/barkisnet/barkis/x/auth/types"
-	stakingtypes "github.com/barkisnet/barkis/x/staking/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	authtypes "github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
+	stakingtypes "github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 var (

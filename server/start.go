@@ -15,7 +15,7 @@ import (
 	pvm "github.com/tendermint/tendermint/privval"
 	"github.com/tendermint/tendermint/proxy"
 
-	"github.com/barkisnet/barkis/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/app/config"
 )
 
 // Tendermint full-node start flags

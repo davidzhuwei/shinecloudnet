@@ -1,10 +1,10 @@
 package types
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	authexported "github.com/barkisnet/barkis/x/auth/exported"
-	stakingexported "github.com/barkisnet/barkis/x/staking/exported"
-	supplyexported "github.com/barkisnet/barkis/x/supply/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	authexported "github.com/shinecloudfoundation/shinecloudnet/x/auth/exported"
+	stakingexported "github.com/shinecloudfoundation/shinecloudnet/x/staking/exported"
+	supplyexported "github.com/shinecloudfoundation/shinecloudnet/x/supply/exported"
 )
 
 // DistributionKeeper expected distribution keeper (noalias)

@@ -1,9 +1,9 @@
 package client
 
 import (
-	govclient "github.com/barkisnet/barkis/x/gov/client"
-	"github.com/barkisnet/barkis/x/params/client/cli"
-	"github.com/barkisnet/barkis/x/params/client/rest"
+	govclient "github.com/shinecloudfoundation/shinecloudnet/x/gov/client"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params/client/cli"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params/client/rest"
 )
 
 // param change proposal handler

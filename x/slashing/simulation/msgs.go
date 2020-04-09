@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/barkisnet/barkis/baseapp"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/simulation"
-	"github.com/barkisnet/barkis/x/slashing"
+	"github.com/shinecloudfoundation/shinecloudnet/baseapp"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/simulation"
+	"github.com/shinecloudfoundation/shinecloudnet/x/slashing"
 )
 
 // SimulateMsgUnjail generates a MsgUnjail with random values

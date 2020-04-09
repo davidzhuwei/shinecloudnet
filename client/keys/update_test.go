@@ -6,8 +6,8 @@ import (
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/tests"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
 )
 
 func Test_updateKeyCommand(t *testing.T) {

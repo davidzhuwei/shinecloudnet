@@ -6,13 +6,13 @@ import (
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/bank"
-	"github.com/barkisnet/barkis/x/mock"
-	"github.com/barkisnet/barkis/x/staking/types"
-	"github.com/barkisnet/barkis/x/supply"
-	supplyexported "github.com/barkisnet/barkis/x/supply/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mock"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply"
+	supplyexported "github.com/shinecloudfoundation/shinecloudnet/x/supply/exported"
 )
 
 // getMockApp returns an initialized mock application for this module.

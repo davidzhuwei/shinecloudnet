@@ -7,9 +7,9 @@ import (
 	"os"
 	"path"
 
-	"github.com/barkisnet/barkis/store"
+	"github.com/shinecloudfoundation/shinecloudnet/store"
 
-	"github.com/barkisnet/barkis/baseapp"
+	"github.com/shinecloudfoundation/shinecloudnet/baseapp"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -18,9 +18,9 @@ import (
 
 	"github.com/tendermint/tendermint/libs/log"
 
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 
-	barkis "github.com/barkisnet/barkis/app"
+	barkis "github.com/shinecloudfoundation/shinecloudnet/app"
 )
 
 func runHackCmd(cmd *cobra.Command, args []string) error {

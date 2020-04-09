@@ -7,9 +7,9 @@ import (
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/slashing/types"
-	"github.com/barkisnet/barkis/x/staking"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/slashing/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking"
 )
 
 // Have to change these parameters for tests

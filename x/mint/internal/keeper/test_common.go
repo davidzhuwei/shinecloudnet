@@ -13,15 +13,15 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/store"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/bank"
-	"github.com/barkisnet/barkis/x/mint/internal/types"
-	"github.com/barkisnet/barkis/x/params"
-	"github.com/barkisnet/barkis/x/staking"
-	"github.com/barkisnet/barkis/x/supply"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/store"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mint/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply"
 )
 
 type testInput struct {

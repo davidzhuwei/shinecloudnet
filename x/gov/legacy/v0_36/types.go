@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	v034gov "github.com/barkisnet/barkis/x/gov/legacy/v0_34"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	v034gov "github.com/shinecloudfoundation/shinecloudnet/x/gov/legacy/v0_34"
 )
 
 const (

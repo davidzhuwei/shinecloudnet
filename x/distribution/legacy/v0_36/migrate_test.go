@@ -1,8 +1,8 @@
 package v0_36
 
 import (
-	"github.com/barkisnet/barkis/types"
-	v034distr "github.com/barkisnet/barkis/x/distribution/legacy/v0_34"
+	"github.com/shinecloudfoundation/shinecloudnet/types"
+	v034distr "github.com/shinecloudfoundation/shinecloudnet/x/distribution/legacy/v0_34"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
 	"testing"
 

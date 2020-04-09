@@ -5,7 +5,7 @@
 package genaccounts
 
 import (
-	"github.com/barkisnet/barkis/x/genaccounts/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genaccounts/internal/types"
 )
 
 const (

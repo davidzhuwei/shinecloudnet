@@ -3,11 +3,11 @@ package keeper
 import (
 	"fmt"
 
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	assetTypes "github.com/barkisnet/barkis/x/asset/internal/types"
-	"github.com/barkisnet/barkis/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	assetTypes "github.com/shinecloudfoundation/shinecloudnet/x/asset/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 )
 

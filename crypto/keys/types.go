@@ -6,8 +6,8 @@ import (
 	"github.com/tendermint/tendermint/crypto"
 	"github.com/tendermint/tendermint/crypto/multisig"
 
-	"github.com/barkisnet/barkis/crypto/keys/hd"
-	"github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/hd"
+	"github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // Keybase exposes operations on a generic keystore
@@ -31,7 +31,7 @@ type Keybase interface {
 	// Derive computes a BIP39 seed from th mnemonic and bip39Passwd.
 	// Derive private key from the seed using the BIP44 params.
 	// Encrypt the key to disk using encryptPasswd.
-	// See https://github.com/barkisnet/barkis/issues/2095
+	// See https://github.com/shinecloudfoundation/shinecloudnet/issues/2095
 	Derive(name, mnemonic, bip39Passwd, encryptPasswd string, params hd.BIP44Params) (Info, error)
 
 	// CreateLedger creates, stores, and returns a new Ledger key reference

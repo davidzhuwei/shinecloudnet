@@ -1,6 +1,6 @@
 package types
 
-import sdk "github.com/barkisnet/barkis/types"
+import sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 
 // querier keys
 const (

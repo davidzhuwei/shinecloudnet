@@ -3,7 +3,7 @@
 package v0_36
 
 import (
-	v034staking "github.com/barkisnet/barkis/x/staking/legacy/v0_34"
+	v034staking "github.com/shinecloudfoundation/shinecloudnet/x/staking/legacy/v0_34"
 )
 
 // Migrate accepts exported genesis state from v0.34 and migrates it to v0.36

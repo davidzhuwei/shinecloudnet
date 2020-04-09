@@ -3,8 +3,8 @@ package rest
 import (
 	"github.com/gorilla/mux"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/x/asset/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/x/asset/internal/types"
 )
 
 // RegisterRoutes - Central function to define routes that get registered by the main application

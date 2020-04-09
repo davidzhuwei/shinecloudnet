@@ -1,8 +1,8 @@
 package keeper
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/supply/internal/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply/internal/types"
 )
 
 // DefaultCodespace from the supply module

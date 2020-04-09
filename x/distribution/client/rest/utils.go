@@ -1,8 +1,8 @@
 package rest
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/types/rest"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/types/rest"
 )
 
 type (

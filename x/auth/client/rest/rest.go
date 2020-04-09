@@ -3,7 +3,7 @@ package rest
 import (
 	"github.com/gorilla/mux"
 
-	"github.com/barkisnet/barkis/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
 )
 
 // RegisterRoutes registers the auth module REST routes.

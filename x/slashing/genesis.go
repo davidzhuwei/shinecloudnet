@@ -1,9 +1,9 @@
 package slashing
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/slashing/types"
-	"github.com/barkisnet/barkis/x/staking/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/slashing/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/exported"
 )
 
 // InitGenesis initialize default parameters

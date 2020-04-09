@@ -7,14 +7,14 @@ import (
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/crypto/secp256k1"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/bank"
-	"github.com/barkisnet/barkis/x/mock"
-	"github.com/barkisnet/barkis/x/staking"
-	"github.com/barkisnet/barkis/x/staking/types"
-	"github.com/barkisnet/barkis/x/supply"
-	supplyexported "github.com/barkisnet/barkis/x/supply/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mock"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply"
+	supplyexported "github.com/shinecloudfoundation/shinecloudnet/x/supply/exported"
 )
 
 var (

@@ -8,8 +8,8 @@ import (
 	"github.com/tendermint/tendermint/crypto/merkle"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/store/errors"
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/errors"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 func TestStoreType(t *testing.T) {

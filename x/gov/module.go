@@ -8,14 +8,14 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/types/module"
-	"github.com/barkisnet/barkis/x/gov/client"
-	"github.com/barkisnet/barkis/x/gov/client/cli"
-	"github.com/barkisnet/barkis/x/gov/client/rest"
-	"github.com/barkisnet/barkis/x/gov/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/types/module"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov/client"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov/client/cli"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov/client/rest"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov/types"
 )
 
 var (

@@ -1,9 +1,9 @@
 package gov
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/gov/types"
-	"github.com/barkisnet/barkis/x/staking/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/exported"
 )
 
 // validatorGovInfo used for tallying

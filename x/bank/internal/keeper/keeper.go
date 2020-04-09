@@ -6,10 +6,10 @@ import (
 
 	"github.com/tendermint/tendermint/libs/log"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth/exported"
-	"github.com/barkisnet/barkis/x/bank/internal/types"
-	"github.com/barkisnet/barkis/x/params"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/exported"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
 )
 
 var _ Keeper = (*BaseKeeper)(nil)

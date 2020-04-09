@@ -3,7 +3,7 @@ package types
 import (
 	"encoding/binary"
 
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 const (

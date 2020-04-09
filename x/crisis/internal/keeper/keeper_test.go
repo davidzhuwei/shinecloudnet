@@ -6,10 +6,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/libs/log"
 
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/crisis/internal/types"
-	"github.com/barkisnet/barkis/x/params"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/crisis/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
 )
 
 func testPassingInvariant(_ sdk.Context) (string, bool) {

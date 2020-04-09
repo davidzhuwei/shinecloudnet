@@ -9,11 +9,11 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/barkisnet/barkis/crypto"
-	"github.com/barkisnet/barkis/crypto/keys/hd"
-	"github.com/barkisnet/barkis/crypto/keys/keyerror"
-	"github.com/barkisnet/barkis/crypto/keys/mintkey"
-	"github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/hd"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/keyerror"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/mintkey"
+	"github.com/shinecloudfoundation/shinecloudnet/types"
 
 	bip39 "github.com/cosmos/go-bip39"
 

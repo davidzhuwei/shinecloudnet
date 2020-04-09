@@ -3,10 +3,10 @@ package server
 import (
 	"fmt"
 
-	"github.com/barkisnet/barkis/crypto/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
 
-	clkeys "github.com/barkisnet/barkis/client/keys"
-	sdk "github.com/barkisnet/barkis/types"
+	clkeys "github.com/shinecloudfoundation/shinecloudnet/client/keys"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // GenerateCoinKey returns the address of a public key, along with the secret

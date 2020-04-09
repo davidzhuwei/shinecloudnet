@@ -1,10 +1,10 @@
 package types
 
 import (
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	authtypes "github.com/barkisnet/barkis/x/auth/types"
-	stakingtypes "github.com/barkisnet/barkis/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	authtypes "github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
+	stakingtypes "github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
 )
 
 // ModuleCdc defines a generic sealed codec to be used throughout this module

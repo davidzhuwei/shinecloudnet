@@ -19,15 +19,15 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/app"
+	"github.com/shinecloudfoundation/shinecloudnet/app"
 
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/tests"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/genaccounts"
-	"github.com/barkisnet/barkis/x/gov"
-	"github.com/barkisnet/barkis/x/mint"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genaccounts"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mint"
 )
 
 func TestBarkisCLIKeysAddMultisig(t *testing.T) {

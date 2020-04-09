@@ -1,8 +1,8 @@
 package asset
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/asset/internal/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/asset/internal/types"
 )
 
 // GenesisState is the bank state that must be provided at genesis.

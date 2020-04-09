@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/viper"
 
-	govutils "github.com/barkisnet/barkis/x/gov/client/utils"
+	govutils "github.com/shinecloudfoundation/shinecloudnet/x/gov/client/utils"
 )
 
 func parseSubmitProposalFlags() (*proposal, error) {

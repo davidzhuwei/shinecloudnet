@@ -7,8 +7,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/client/keys"
-	"github.com/barkisnet/barkis/server"
+	"github.com/shinecloudfoundation/shinecloudnet/client/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/server"
 )
 
 func TestGenerateCoinKey(t *testing.T) {

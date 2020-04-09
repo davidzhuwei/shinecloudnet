@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/asset/internal/types"
-	"github.com/barkisnet/barkis/x/auth"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/asset/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
 )
 
 // NewHandler returns a handler for "bank" type messages.

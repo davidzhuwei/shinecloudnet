@@ -3,10 +3,10 @@ package bank_test
 import (
 	"testing"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/bank/internal/types"
-	"github.com/barkisnet/barkis/x/mock"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mock"
 
 	"github.com/stretchr/testify/require"
 

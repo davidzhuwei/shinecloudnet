@@ -18,19 +18,19 @@ import (
 	"github.com/tendermint/tendermint/libs/common"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/app/config"
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/codec"
-	kbkeys "github.com/barkisnet/barkis/crypto/keys"
-	"github.com/barkisnet/barkis/server"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/types/module"
-	"github.com/barkisnet/barkis/x/auth/client/utils"
+	"github.com/shinecloudfoundation/shinecloudnet/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	kbkeys "github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/server"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/types/module"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/client/utils"
 
-	"github.com/barkisnet/barkis/x/auth"
-	"github.com/barkisnet/barkis/x/genutil"
-	"github.com/barkisnet/barkis/x/genutil/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil/types"
 )
 
 // StakingMsgBuildingHelpers helpers for message building gen-tx command

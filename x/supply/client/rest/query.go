@@ -6,9 +6,9 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/types/rest"
-	"github.com/barkisnet/barkis/x/supply/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/types/rest"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply/internal/types"
 )
 
 // RegisterRoutes registers staking-related REST handlers to a router

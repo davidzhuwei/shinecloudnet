@@ -5,9 +5,9 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/distribution/types"
-	"github.com/barkisnet/barkis/x/staking/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/exported"
 )
 
 // AllocateTokens handles distribution of the collected fees

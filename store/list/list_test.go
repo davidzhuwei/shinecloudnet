@@ -11,9 +11,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/store/rootmulti"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/store/rootmulti"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 type TestStruct struct {

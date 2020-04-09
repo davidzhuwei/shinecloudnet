@@ -11,7 +11,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/barkisnet/barkis/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
 )
 
 const (

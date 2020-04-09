@@ -1,8 +1,8 @@
 package keeper
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/distribution/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/distribution/types"
 )
 
 // get the delegator withdraw address, defaulting to the delegator address

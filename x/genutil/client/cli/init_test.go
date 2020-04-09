@@ -14,15 +14,15 @@ import (
 	"github.com/tendermint/tendermint/libs/cli"
 	"github.com/tendermint/tendermint/libs/log"
 
-	"github.com/barkisnet/barkis/app/config"
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/server"
-	"github.com/barkisnet/barkis/server/mock"
-	"github.com/barkisnet/barkis/tests"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/types/module"
-	"github.com/barkisnet/barkis/x/genutil"
+	"github.com/shinecloudfoundation/shinecloudnet/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/server"
+	"github.com/shinecloudfoundation/shinecloudnet/server/mock"
+	"github.com/shinecloudfoundation/shinecloudnet/tests"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/types/module"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil"
 )
 
 var testMbm = module.NewBasicManager(genutil.AppModuleBasic{})

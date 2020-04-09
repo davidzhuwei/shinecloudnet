@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/barkisnet/barkis/store/cachekv"
-	"github.com/barkisnet/barkis/store/tracekv"
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/cachekv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/tracekv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 var _ types.KVStore = Store{}

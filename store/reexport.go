@@ -1,8 +1,8 @@
 package store
 
 import (
-	"github.com/barkisnet/barkis/store/types"
-	stypes "github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
+	stypes "github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 // Import cosmos-sdk/types/store.go for convenience.

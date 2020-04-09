@@ -7,11 +7,11 @@ import (
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/slashing"
-	"github.com/barkisnet/barkis/x/staking"
-	"github.com/barkisnet/barkis/x/staking/exported"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/slashing"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/exported"
 )
 
 // ExportAppStateAndValidators exports the state of the application for a genesis

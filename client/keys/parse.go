@@ -13,8 +13,8 @@ import (
 	"github.com/tendermint/tendermint/libs/bech32"
 	"github.com/tendermint/tendermint/libs/cli"
 
-	"github.com/barkisnet/barkis/client/flags"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 var bech32Prefixes = []string{

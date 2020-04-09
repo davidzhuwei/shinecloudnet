@@ -6,9 +6,9 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/types/rest"
-	"github.com/barkisnet/barkis/x/asset/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/types/rest"
+	"github.com/shinecloudfoundation/shinecloudnet/x/asset/internal/types"
 )
 
 // HTTP request handler to query the asset params values

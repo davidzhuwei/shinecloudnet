@@ -1,9 +1,9 @@
 package keeper
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/staking/types"
-	"github.com/barkisnet/barkis/x/supply/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/staking/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/supply/exported"
 )
 
 // GetBondedPool returns the bonded tokens pool's module account

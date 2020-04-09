@@ -7,11 +7,11 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/version"
-	"github.com/barkisnet/barkis/x/asset/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/version"
+	"github.com/shinecloudfoundation/shinecloudnet/x/asset/internal/types"
 )
 
 const (

@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/barkisnet/barkis/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
 )
 
 // State to Unmarshal

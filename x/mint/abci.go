@@ -1,8 +1,8 @@
 package mint
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/mint/internal/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/mint/internal/types"
 )
 
 // BeginBlocker mints new tokens for the previous block.

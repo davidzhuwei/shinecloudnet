@@ -5,9 +5,9 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/store/cachekv"
-	"github.com/barkisnet/barkis/store/dbadapter"
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/cachekv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/dbadapter"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 //----------------------------------------

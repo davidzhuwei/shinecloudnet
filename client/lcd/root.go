@@ -14,14 +14,14 @@ import (
 	"github.com/tendermint/tendermint/libs/log"
 	rpcserver "github.com/tendermint/tendermint/rpc/lib/server"
 
-	"github.com/barkisnet/barkis/client/context"
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/codec"
-	keybase "github.com/barkisnet/barkis/crypto/keys"
-	"github.com/barkisnet/barkis/server"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	keybase "github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/server"
 
 	// unnamed import of statik for swagger UI support
-	_ "github.com/barkisnet/barkis/client/lcd/statik"
+	_ "github.com/shinecloudfoundation/shinecloudnet/client/lcd/statik"
 )
 
 // RestServer represents the Light Client Rest server

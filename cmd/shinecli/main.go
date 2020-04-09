@@ -5,17 +5,17 @@ import (
 	"os"
 	"path"
 
-	"github.com/barkisnet/barkis/client"
-	"github.com/barkisnet/barkis/client/keys"
-	"github.com/barkisnet/barkis/client/lcd"
-	"github.com/barkisnet/barkis/client/rpc"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/version"
-	"github.com/barkisnet/barkis/x/auth"
-	authcmd "github.com/barkisnet/barkis/x/auth/client/cli"
-	authrest "github.com/barkisnet/barkis/x/auth/client/rest"
-	"github.com/barkisnet/barkis/x/bank"
-	bankcmd "github.com/barkisnet/barkis/x/bank/client/cli"
+	"github.com/shinecloudfoundation/shinecloudnet/client"
+	"github.com/shinecloudfoundation/shinecloudnet/client/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/client/lcd"
+	"github.com/shinecloudfoundation/shinecloudnet/client/rpc"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/version"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
+	authcmd "github.com/shinecloudfoundation/shinecloudnet/x/auth/client/cli"
+	authrest "github.com/shinecloudfoundation/shinecloudnet/x/auth/client/rest"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank"
+	bankcmd "github.com/shinecloudfoundation/shinecloudnet/x/bank/client/cli"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -23,7 +23,7 @@ import (
 	"github.com/tendermint/go-amino"
 	"github.com/tendermint/tendermint/libs/cli"
 
-	"github.com/barkisnet/barkis/app"
+	"github.com/shinecloudfoundation/shinecloudnet/app"
 )
 
 func main() {

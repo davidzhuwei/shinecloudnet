@@ -6,9 +6,9 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/crypto"
 
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/asset/internal/keeper"
-	"github.com/barkisnet/barkis/x/asset/internal/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/asset/internal/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/asset/internal/types"
 )
 
 func TestSendKeeper(t *testing.T) {

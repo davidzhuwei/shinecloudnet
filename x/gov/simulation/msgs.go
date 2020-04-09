@@ -6,10 +6,10 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/barkisnet/barkis/baseapp"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/gov"
-	"github.com/barkisnet/barkis/x/simulation"
+	"github.com/shinecloudfoundation/shinecloudnet/baseapp"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov"
+	"github.com/shinecloudfoundation/shinecloudnet/x/simulation"
 )
 
 // ContentSimulator defines a function type alias for generating random proposal

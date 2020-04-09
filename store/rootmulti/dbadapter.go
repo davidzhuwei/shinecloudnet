@@ -1,8 +1,8 @@
 package rootmulti
 
 import (
-	"github.com/barkisnet/barkis/store/dbadapter"
-	"github.com/barkisnet/barkis/store/types"
+	"github.com/shinecloudfoundation/shinecloudnet/store/dbadapter"
+	"github.com/shinecloudfoundation/shinecloudnet/store/types"
 )
 
 var commithash = []byte("FAKE_HASH")

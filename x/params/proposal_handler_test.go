@@ -9,12 +9,12 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/codec"
-	"github.com/barkisnet/barkis/store"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/params"
-	"github.com/barkisnet/barkis/x/params/subspace"
-	"github.com/barkisnet/barkis/x/params/types"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	"github.com/shinecloudfoundation/shinecloudnet/store"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params/subspace"
+	"github.com/shinecloudfoundation/shinecloudnet/x/params/types"
 )
 
 type testInput struct {

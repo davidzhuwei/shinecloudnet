@@ -12,11 +12,11 @@ import (
 	"github.com/tendermint/tendermint/crypto/multisig"
 	"github.com/tendermint/tendermint/libs/cli"
 
-	"github.com/barkisnet/barkis/client/flags"
-	"github.com/barkisnet/barkis/crypto"
-	"github.com/barkisnet/barkis/crypto/keys"
-	"github.com/barkisnet/barkis/crypto/keys/keyerror"
-	sdk "github.com/barkisnet/barkis/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys"
+	"github.com/shinecloudfoundation/shinecloudnet/crypto/keys/keyerror"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 const (

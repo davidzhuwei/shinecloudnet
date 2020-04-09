@@ -3,10 +3,10 @@ package utils
 import (
 	"fmt"
 
-	"github.com/barkisnet/barkis/client/context"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/x/auth/client/utils"
-	"github.com/barkisnet/barkis/x/gov/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/client/utils"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov/types"
 )
 
 const (

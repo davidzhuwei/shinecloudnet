@@ -7,12 +7,12 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/tendermint/tendermint/types"
 
-	"github.com/barkisnet/barkis/app/config"
-	"github.com/barkisnet/barkis/codec"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/version"
-	extypes "github.com/barkisnet/barkis/x/genutil"
-	v036 "github.com/barkisnet/barkis/x/genutil/legacy/v036"
+	"github.com/shinecloudfoundation/shinecloudnet/app/config"
+	"github.com/shinecloudfoundation/shinecloudnet/codec"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/version"
+	extypes "github.com/shinecloudfoundation/shinecloudnet/x/genutil"
+	v036 "github.com/shinecloudfoundation/shinecloudnet/x/genutil/legacy/v036"
 )
 
 var migrationMap = extypes.MigrationMap{

@@ -5,7 +5,7 @@
 package gov
 
 import (
-	"github.com/barkisnet/barkis/x/gov/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/gov/types"
 )
 
 const (

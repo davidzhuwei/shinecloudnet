@@ -3,10 +3,10 @@ package rest
 import (
 	"net/http"
 
-	"github.com/barkisnet/barkis/client/context"
-	sdk "github.com/barkisnet/barkis/types"
-	"github.com/barkisnet/barkis/types/rest"
-	"github.com/barkisnet/barkis/x/genutil/types"
+	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	"github.com/shinecloudfoundation/shinecloudnet/types/rest"
+	"github.com/shinecloudfoundation/shinecloudnet/x/genutil/types"
 )
 
 // QueryGenesisTxs writes the genesis transactions to the response if no error

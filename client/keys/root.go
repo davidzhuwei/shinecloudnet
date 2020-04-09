@@ -4,7 +4,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/spf13/cobra"
 
-	"github.com/barkisnet/barkis/client/flags"
+	"github.com/shinecloudfoundation/shinecloudnet/client/flags"
 )
 
 // Commands registers a sub-tree of commands to interact with

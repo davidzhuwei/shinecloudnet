@@ -7,8 +7,8 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/barkisnet/barkis/store/cachekv"
-	"github.com/barkisnet/barkis/store/dbadapter"
+	"github.com/shinecloudfoundation/shinecloudnet/store/cachekv"
+	"github.com/shinecloudfoundation/shinecloudnet/store/dbadapter"
 )
 
 func benchmarkCacheKVStoreIterator(numKVs int, b *testing.B) {

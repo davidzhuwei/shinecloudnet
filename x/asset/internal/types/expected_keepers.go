@@ -1,8 +1,8 @@
 package types
 
 import (
-	sdk "github.com/barkisnet/barkis/types"
-	supplyexported "github.com/barkisnet/barkis/x/supply/exported"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
+	supplyexported "github.com/shinecloudfoundation/shinecloudnet/x/supply/exported"
 )
 
 // SupplyKeeper defines the expected supply keeper
