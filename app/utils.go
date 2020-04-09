@@ -40,8 +40,8 @@ var (
 // NOTE: to not use this function with non-test code
 func NewBarkisAppUNSAFE(logger log.Logger, db dbm.DB, traceStore io.Writer, loadLatest bool,
 	invCheckPeriod uint, baseAppOptions ...func(*baseapp.BaseApp),
-) (bapp *BarkisApp, keyMain, keyStaking *sdk.KVStoreKey, stakingKeeper staking.Keeper) {
+) (bapp *ShineApp, keyMain, keyStaking *sdk.KVStoreKey, stakingKeeper staking.Keeper) {
 
-	bapp = NewBarkisApp(logger, db, traceStore, loadLatest, invCheckPeriod, baseAppOptions...)
+	bapp = NewShineApp(logger, db, traceStore, loadLatest, invCheckPeriod, baseAppOptions...)
 	return bapp, bapp.keys[baseapp.MainStoreKey], bapp.keys[staking.StoreKey], bapp.stakingKeeper
 }

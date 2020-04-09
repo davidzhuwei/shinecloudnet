@@ -14,7 +14,7 @@ import (
 )
 
 // export the state of barkis for a genesis file
-func (app *BarkisApp) ExportAppStateAndValidators(forZeroHeight bool, jailWhiteList []string,
+func (app *ShineApp) ExportAppStateAndValidators(forZeroHeight bool, jailWhiteList []string,
 ) (appState json.RawMessage, validators []tmtypes.GenesisValidator, err error) {
 	// as if they could withdraw from the start of the next block
 	ctx := app.NewContext(true, abci.Header{Height: app.LastBlockHeight()})
@@ -35,7 +35,7 @@ func (app *BarkisApp) ExportAppStateAndValidators(forZeroHeight bool, jailWhiteL
 // prepare for fresh start at zero height
 // NOTE zero height genesis is a temporary feature which will be deprecated
 //      in favour of export at a block height
-func (app *BarkisApp) prepForZeroHeightGenesis(ctx sdk.Context, jailWhiteList []string) {
+func (app *ShineApp) prepForZeroHeightGenesis(ctx sdk.Context, jailWhiteList []string) {
 	applyWhiteList := false
 
 	//Check if there is a whitelist

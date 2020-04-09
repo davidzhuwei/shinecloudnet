@@ -39,7 +39,7 @@ func main() {
 	config.SetBech32PrefixForConsensusNode(sdk.Bech32PrefixConsAddr, sdk.Bech32PrefixConsPub)
 	config.Seal()
 
-	ctx := app.BarkisContext
+	ctx := app.ShineContext
 	cobra.EnableCommandSorting = false
 	rootCmd := &cobra.Command{
 		Use:               "barkisd",
@@ -71,7 +71,7 @@ func main() {
 }
 
 func newApp(logger log.Logger, db dbm.DB, traceStore io.Writer) abci.Application {
-	return app.NewBarkisApp(
+	return app.NewShineApp(
 		logger, db, traceStore, true, invCheckPeriod,
 		baseapp.SetPruning(store.NewPruningOptionsFromString(viper.GetString("pruning"))),
 		baseapp.SetMinGasPrices(viper.GetString(server.FlagMinGasPrices)),
@@ -84,13 +84,13 @@ func exportAppStateAndTMValidators(
 ) (json.RawMessage, []tmtypes.GenesisValidator, error) {
 
 	if height != -1 {
-		gApp := app.NewBarkisApp(logger, db, traceStore, false, uint(1))
+		gApp := app.NewShineApp(logger, db, traceStore, false, uint(1))
 		err := gApp.LoadHeight(height)
 		if err != nil {
 			return nil, nil, err
 		}
 		return gApp.ExportAppStateAndValidators(forZeroHeight, jailWhiteList)
 	}
-	gApp := app.NewBarkisApp(logger, db, traceStore, true, uint(1))
+	gApp := app.NewShineApp(logger, db, traceStore, true, uint(1))
 	return gApp.ExportAppStateAndValidators(forZeroHeight, jailWhiteList)
 }

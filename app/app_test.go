@@ -17,11 +17,11 @@ import (
 
 func TestBarkisdExport(t *testing.T) {
 	db := db.NewMemDB()
-	gapp := NewBarkisApp(log.NewTMLogger(log.NewSyncWriter(os.Stdout)), db, nil, true, 0)
+	gapp := NewShineApp(log.NewTMLogger(log.NewSyncWriter(os.Stdout)), db, nil, true, 0)
 	setGenesis(gapp)
 
 	// Making a new app object with the db, so that initchain hasn't been called
-	newGapp := NewBarkisApp(log.NewTMLogger(log.NewSyncWriter(os.Stdout)), db, nil, true, 0)
+	newGapp := NewShineApp(log.NewTMLogger(log.NewSyncWriter(os.Stdout)), db, nil, true, 0)
 	_, _, err := newGapp.ExportAppStateAndValidators(false, []string{})
 	require.NoError(t, err, "ExportAppStateAndValidators should not have an error")
 }
@@ -36,7 +36,7 @@ func TestTxDecoder(t *testing.T) {
 	t.Log(len(msg))
 }
 
-func setGenesis(gapp *BarkisApp) error {
+func setGenesis(gapp *ShineApp) error {
 
 	genesisState := simapp.NewDefaultGenesisState()
 	stateBytes, err := codec.MarshalJSONIndent(gapp.cdc, genesisState)

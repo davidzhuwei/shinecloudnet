@@ -72,7 +72,7 @@ func InitializeLCD(nValidators int, initAddrs []sdk.AccAddress, minting bool, po
 	logger = log.NewFilter(logger, log.AllowError())
 
 	db := dbm.NewMemDB()
-	app := bapp.NewBarkisApp(logger, db, nil, true, 0, baseapp.SetPruning(store.PruneNothing))
+	app := bapp.NewShineApp(logger, db, nil, true, 0, baseapp.SetPruning(store.PruneNothing))
 	cdc = bapp.MakeCodec()
 
 	genDoc, valConsPubKeys, valOperAddrs, privVal, err := defaultGenesis(config, nValidators, initAddrs, minting)
@@ -302,7 +302,7 @@ func defaultGenesis(config *tmcfg.Config, nValidators int, initAddrs []sdk.AccAd
 // TODO: Clean up the WAL dir or enable it to be not persistent!
 func startTM(
 	tmcfg *tmcfg.Config, logger log.Logger, genDoc *tmtypes.GenesisDoc,
-	privVal tmtypes.PrivValidator, app *bapp.BarkisApp,
+	privVal tmtypes.PrivValidator, app *bapp.ShineApp,
 ) (*nm.Node, error) {
 
 	genDocProvider := func() (*tmtypes.GenesisDoc, error) { return genDoc, nil }
