@@ -64,8 +64,8 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 # process linker flags
 
 ldflags = -X github.com/shinecloudfoundation/shinecloudnet/version.Name=shine \
-		  -X github.com/shinecloudfoundation/shinecloudnet/version.ServerName=shined \
-		  -X github.com/shinecloudfoundation/shinecloudnet/version.ClientName=shinecli \
+		  -X github.com/shinecloudfoundation/shinecloudnet/version.ServerName=scloud \
+		  -X github.com/shinecloudfoundation/shinecloudnet/version.ClientName=scloudcli \
 		  -X github.com/shinecloudfoundation/shinecloudnet/version.Version=$(VERSION) \
 		  -X github.com/shinecloudfoundation/shinecloudnet/version.Commit=$(COMMIT) \
 		  -X "github.com/shinecloudfoundation/shinecloudnet/version.BuildTags=$(build_tags_comma_sep)"
@@ -83,11 +83,11 @@ include contrib/devtools/Makefile
 
 build: go.sum
 ifeq ($(OS),Windows_NT)
-	go build -mod=readonly $(BUILD_FLAGS) -o build/shined.exe ./cmd/shined
-	go build -mod=readonly $(BUILD_FLAGS) -o build/shinecli.exe ./cmd/shinecli
+	go build -mod=readonly $(BUILD_FLAGS) -o build/scloud.exe ./cmd/scloud
+	go build -mod=readonly $(BUILD_FLAGS) -o build/scloudcli.exe ./cmd/scloudcli
 else
-	go build -mod=readonly $(BUILD_FLAGS) -o build/shined ./cmd/shined
-	go build -mod=readonly $(BUILD_FLAGS) -o build/shinecli ./cmd/shinecli
+	go build -mod=readonly $(BUILD_FLAGS) -o build/scloud ./cmd/scloud
+	go build -mod=readonly $(BUILD_FLAGS) -o build/scloudcli ./cmd/scloudcli
 endif
 
 build-linux: go.sum
@@ -101,11 +101,11 @@ else
 endif
 
 install: go.sum check-ledger
-	go install -mod=readonly $(BUILD_FLAGS) ./cmd/shined
-	go install -mod=readonly $(BUILD_FLAGS) ./cmd/shinecli
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/scloud
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/scloudcli
 
 install-debug: go.sum
-	go install -mod=readonly $(BUILD_FLAGS) ./cmd/barkisdebug
+	go install -mod=readonly $(BUILD_FLAGS) ./cmd/sclouddebug
 
 
 
@@ -123,7 +123,7 @@ go.sum: go.mod
 draw-deps:
 	@# requires brew install graphviz or apt-get install graphviz
 	go get github.com/RobotsAndPencils/goviz
-	@goviz -i ./cmd/shined -d 2 | dot -Tpng -o dependency-graph.png
+	@goviz -i ./cmd/scloud -d 2 | dot -Tpng -o dependency-graph.png
 
 clean:
 	rm -rf snapcraft-local.yaml build/
@@ -247,12 +247,12 @@ benchmark:
 ########################################
 ### Local validator nodes using docker and docker-compose
 
-build-docker-barkisdnode:
+build-docker-scloudnode:
 	$(MAKE) -C networks/local
 
 # Run a 4-node testnet locally
 localnet-start: localnet-stop
-	@if ! [ -f build/node0/shined/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/shined:Z tendermint/barkisdnode testnet --v 4 -o . --starting-ip-address 192.168.10.2 ; fi
+	@if ! [ -f build/node0/scloud/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/scloud:Z tendermint/scloudnode testnet --v 4 -o . --starting-ip-address 192.168.10.2 ; fi
 	docker-compose up -d
 
 # Stop testnet
@@ -261,33 +261,33 @@ localnet-stop:
 
 localnet-reset:
 	docker-compose down
-	docker run --rm -v $(CURDIR)/build:/shined:Z tendermint/barkisdnode unsafe-reset-all --home /shined/node0/shined
-	docker run --rm -v $(CURDIR)/build:/shined:Z tendermint/barkisdnode unsafe-reset-all --home /shined/node1/shined
-	docker run --rm -v $(CURDIR)/build:/shined:Z tendermint/barkisdnode unsafe-reset-all --home /shined/node2/shined
-	docker run --rm -v $(CURDIR)/build:/shined:Z tendermint/barkisdnode unsafe-reset-all --home /shined/node3/shined
+	docker run --rm -v $(CURDIR)/build:/scloud:Z tendermint/scloudnode unsafe-reset-all --home /scloud/node0/scloud
+	docker run --rm -v $(CURDIR)/build:/scloud:Z tendermint/scloudnode unsafe-reset-all --home /scloud/node1/scloud
+	docker run --rm -v $(CURDIR)/build:/scloud:Z tendermint/scloudnode unsafe-reset-all --home /scloud/node2/scloud
+	docker run --rm -v $(CURDIR)/build:/scloud:Z tendermint/scloudnode unsafe-reset-all --home /scloud/node3/scloud
 
 setup-contract-tests-data:
 	echo 'Prepare data for the contract tests'
 	rm -rf /tmp/contract_tests ; \
 	mkdir /tmp/contract_tests ; \
 	cp "${GOPATH}/pkg/mod/${SDK_PACK}/client/lcd/swagger-ui/swagger.yaml" /tmp/contract_tests/swagger.yaml ; \
-	./build/shined init --home /tmp/contract_tests/.shined --chain-id lcd contract-tests ; \
+	./build/scloud init --home /tmp/contract_tests/.scloud --chain-id lcd contract-tests ; \
 	tar -xzf lcd_test/testdata/state.tar.gz -C /tmp/contract_tests/
 
 start-shine: setup-contract-tests-data
-	./build/shined --home /tmp/contract_tests/.shined start &
+	./build/scloud --home /tmp/contract_tests/.scloud start &
 	@sleep 2s
 
 setup-transactions: start-shine
 	@bash ./lcd_test/testdata/setup.sh
 
 run-lcd-contract-tests:
-	@echo "Running Barkis LCD for contract tests"
-	./build/shinecli rest-server --laddr tcp://0.0.0.0:8080 --home /tmp/contract_tests/.shinecli --node http://localhost:26657 --chain-id lcd --trust-node true
+	@echo "Running Scloud LCD for contract tests"
+	./build/scloudcli rest-server --laddr tcp://0.0.0.0:8080 --home /tmp/contract_tests/.scloudcli --node http://localhost:26657 --chain-id lcd --trust-node true
 
 contract-tests: setup-transactions
-	@echo "Running Barkis LCD for contract tests"
-	dredd && pkill shined
+	@echo "Running Scloud LCD for contract tests"
+	dredd && pkill scloud
 
 # include simulations
 include sims.mk
