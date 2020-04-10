@@ -69,22 +69,22 @@ var (
 
 // Fixtures is used to setup the testing environment
 type Fixtures struct {
-	BuildDir      string
-	RootDir       string
-	BarkisdBinary   string
-	BarkiscliBinary string
-	ChainID       string
-	RPCAddr       string
-	Port          string
-	BarkisdHome     string
-	BarkiscliHome   string
-	P2PAddr       string
-	T             *testing.T
+	BuildDir        string
+	RootDir         string
+	ScloudBinary    string
+	ScloudcliBinary string
+	ChainID         string
+	RPCAddr         string
+	Port            string
+	ScloudHome      string
+	ScloudcliHome   string
+	P2PAddr         string
+	T               *testing.T
 }
 
 // NewFixtures creates a new instance of Fixtures with many vars set
 func NewFixtures(t *testing.T) *Fixtures {
-	tmpDir, err := ioutil.TempDir("", "barkis_integration_"+t.Name()+"_")
+	tmpDir, err := ioutil.TempDir("", "scloud_integration_"+t.Name()+"_")
 	require.NoError(t, err)
 
 	servAddr, port, err := server.FreeTCPAddr()
@@ -100,22 +100,22 @@ func NewFixtures(t *testing.T) *Fixtures {
 	}
 
 	return &Fixtures{
-		T:             t,
-		BuildDir:      buildDir,
-		RootDir:       tmpDir,
-		BarkisdBinary:   filepath.Join(buildDir, "barkisd"),
-		BarkiscliBinary: filepath.Join(buildDir, "barkiscli"),
-		BarkisdHome:     filepath.Join(tmpDir, ".barkisd"),
-		BarkiscliHome:   filepath.Join(tmpDir, ".barkiscli"),
-		RPCAddr:       servAddr,
-		P2PAddr:       p2pAddr,
-		Port:          port,
+		T:               t,
+		BuildDir:        buildDir,
+		RootDir:         tmpDir,
+		ScloudBinary:    filepath.Join(buildDir, "scloud"),
+		ScloudcliBinary: filepath.Join(buildDir, "scloudcli"),
+		ScloudHome:      filepath.Join(tmpDir, ".scloud"),
+		ScloudcliHome:   filepath.Join(tmpDir, ".scloudcli"),
+		RPCAddr:         servAddr,
+		P2PAddr:         p2pAddr,
+		Port:            port,
 	}
 }
 
 // GenesisFile returns the path of the genesis file
 func (f Fixtures) GenesisFile() string {
-	return filepath.Join(f.BarkisdHome, "config", "genesis.json")
+	return filepath.Join(f.ScloudHome, "config", "genesis.json")
 }
 
 // GenesisFile returns the application's genesis state
@@ -184,24 +184,24 @@ func (f *Fixtures) Cleanup(dirs ...string) {
 
 // Flags returns the flags necessary for making most CLI calls
 func (f *Fixtures) Flags() string {
-	return fmt.Sprintf("--home=%s --node=%s", f.BarkiscliHome, f.RPCAddr)
+	return fmt.Sprintf("--home=%s --node=%s", f.ScloudcliHome, f.RPCAddr)
 }
 
 //___________________________________________________________________________________
-// barkisd
+// scloud
 
-// UnsafeResetAll is barkisd unsafe-reset-all
+// UnsafeResetAll is scloud unsafe-reset-all
 func (f *Fixtures) UnsafeResetAll(flags ...string) {
-	cmd := fmt.Sprintf("%s --home=%s unsafe-reset-all", f.BarkisdBinary, f.BarkisdHome)
+	cmd := fmt.Sprintf("%s --home=%s unsafe-reset-all", f.ScloudBinary, f.ScloudHome)
 	executeWrite(f.T, addFlags(cmd, flags))
-	err := os.RemoveAll(filepath.Join(f.BarkisdHome, "config", "gentx"))
+	err := os.RemoveAll(filepath.Join(f.ScloudHome, "config", "gentx"))
 	require.NoError(f.T, err)
 }
 
-// GDInit is barkisd init
+// GDInit is scloud init
 // NOTE: GDInit sets the ChainID for the Fixtures instance
 func (f *Fixtures) GDInit(moniker string, flags ...string) {
-	cmd := fmt.Sprintf("%s init -o --home=%s %s", f.BarkisdBinary, f.BarkisdHome, moniker)
+	cmd := fmt.Sprintf("%s init -o --home=%s %s", f.ScloudBinary, f.ScloudHome, moniker)
 	_, stderr := tests.ExecuteT(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 
 	var chainID string
@@ -216,78 +216,78 @@ func (f *Fixtures) GDInit(moniker string, flags ...string) {
 	f.ChainID = chainID
 }
 
-// AddGenesisAccount is barkisd add-genesis-account
+// AddGenesisAccount is scloud add-genesis-account
 func (f *Fixtures) AddGenesisAccount(address sdk.AccAddress, coins sdk.Coins, flags ...string) {
-	cmd := fmt.Sprintf("%s add-genesis-account %s %s --home=%s", f.BarkisdBinary, address, coins, f.BarkisdHome)
+	cmd := fmt.Sprintf("%s add-genesis-account %s %s --home=%s", f.ScloudBinary, address, coins, f.ScloudHome)
 	executeWriteCheckErr(f.T, addFlags(cmd, flags))
 }
 
-// GenTx is barkisd gentx
+// GenTx is scloud gentx
 func (f *Fixtures) GenTx(name string, flags ...string) {
-	cmd := fmt.Sprintf("%s gentx --name=%s --home=%s --home-client=%s", f.BarkisdBinary, name, f.BarkisdHome, f.BarkiscliHome)
+	cmd := fmt.Sprintf("%s gentx --name=%s --home=%s --home-client=%s", f.ScloudBinary, name, f.ScloudHome, f.ScloudcliHome)
 	executeWriteCheckErr(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
-// CollectGenTxs is barkisd collect-gentxs
+// CollectGenTxs is scloud collect-gentxs
 func (f *Fixtures) CollectGenTxs(flags ...string) {
-	cmd := fmt.Sprintf("%s collect-gentxs --home=%s", f.BarkisdBinary, f.BarkisdHome)
+	cmd := fmt.Sprintf("%s collect-gentxs --home=%s", f.ScloudBinary, f.ScloudHome)
 	executeWriteCheckErr(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
-// GDStart runs barkisd start with the appropriate flags and returns a process
+// GDStart runs scloud start with the appropriate flags and returns a process
 func (f *Fixtures) GDStart(flags ...string) *tests.Process {
-	cmd := fmt.Sprintf("%s start --home=%s --rpc.laddr=%v --p2p.laddr=%v", f.BarkisdBinary, f.BarkisdHome, f.RPCAddr, f.P2PAddr)
+	cmd := fmt.Sprintf("%s start --home=%s --rpc.laddr=%v --p2p.laddr=%v", f.ScloudBinary, f.ScloudHome, f.RPCAddr, f.P2PAddr)
 	proc := tests.GoExecuteTWithStdout(f.T, addFlags(cmd, flags))
 	tests.WaitForTMStart(f.Port)
 	tests.WaitForNextNBlocksTM(1, f.Port)
 	return proc
 }
 
-// GDTendermint returns the results of barkisd tendermint [query]
+// GDTendermint returns the results of scloud tendermint [query]
 func (f *Fixtures) GDTendermint(query string) string {
-	cmd := fmt.Sprintf("%s tendermint %s --home=%s", f.BarkisdBinary, query, f.BarkisdHome)
+	cmd := fmt.Sprintf("%s tendermint %s --home=%s", f.ScloudBinary, query, f.ScloudHome)
 	success, stdout, stderr := executeWriteRetStdStreams(f.T, cmd)
 	require.Empty(f.T, stderr)
 	require.True(f.T, success)
 	return strings.TrimSpace(stdout)
 }
 
-// ValidateGenesis runs barkisd validate-genesis
+// ValidateGenesis runs scloud validate-genesis
 func (f *Fixtures) ValidateGenesis() {
-	cmd := fmt.Sprintf("%s validate-genesis --home=%s", f.BarkisdBinary, f.BarkisdHome)
+	cmd := fmt.Sprintf("%s validate-genesis --home=%s", f.ScloudBinary, f.ScloudHome)
 	executeWriteCheckErr(f.T, cmd)
 }
 
 //___________________________________________________________________________________
-// barkiscli keys
+// scloudcli keys
 
-// KeysDelete is barkiscli keys delete
+// KeysDelete is scloudcli keys delete
 func (f *Fixtures) KeysDelete(name string, flags ...string) {
-	cmd := fmt.Sprintf("%s keys delete --home=%s %s", f.BarkiscliBinary, f.BarkiscliHome, name)
+	cmd := fmt.Sprintf("%s keys delete --home=%s %s", f.ScloudcliBinary, f.ScloudcliHome, name)
 	executeWrite(f.T, addFlags(cmd, append(append(flags, "-y"), "-f")))
 }
 
-// KeysAdd is barkiscli keys add
+// KeysAdd is scloudcli keys add
 func (f *Fixtures) KeysAdd(name string, flags ...string) {
-	cmd := fmt.Sprintf("%s keys add --home=%s %s", f.BarkiscliBinary, f.BarkiscliHome, name)
+	cmd := fmt.Sprintf("%s keys add --home=%s %s", f.ScloudcliBinary, f.ScloudcliHome, name)
 	executeWriteCheckErr(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
-// KeysAddRecover prepares barkiscli keys add --recover
+// KeysAddRecover prepares scloudcli keys add --recover
 func (f *Fixtures) KeysAddRecover(name, mnemonic string, flags ...string) (exitSuccess bool, stdout, stderr string) {
-	cmd := fmt.Sprintf("%s keys add --home=%s --recover %s", f.BarkiscliBinary, f.BarkiscliHome, name)
+	cmd := fmt.Sprintf("%s keys add --home=%s --recover %s", f.ScloudcliBinary, f.ScloudcliHome, name)
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass, mnemonic)
 }
 
-// KeysAddRecoverHDPath prepares barkiscli keys add --recover --account --index
+// KeysAddRecoverHDPath prepares scloudcli keys add --recover --account --index
 func (f *Fixtures) KeysAddRecoverHDPath(name, mnemonic string, account uint32, index uint32, flags ...string) {
-	cmd := fmt.Sprintf("%s keys add --home=%s --recover %s --account %d --index %d", f.BarkiscliBinary, f.BarkiscliHome, name, account, index)
+	cmd := fmt.Sprintf("%s keys add --home=%s --recover %s --account %d --index %d", f.ScloudcliBinary, f.ScloudcliHome, name, account, index)
 	executeWriteCheckErr(f.T, addFlags(cmd, flags), client.DefaultKeyPass, mnemonic)
 }
 
-// KeysShow is barkiscli keys show
+// KeysShow is scloudcli keys show
 func (f *Fixtures) KeysShow(name string, flags ...string) keys.KeyOutput {
-	cmd := fmt.Sprintf("%s keys show --home=%s %s", f.BarkiscliBinary, f.BarkiscliHome, name)
+	cmd := fmt.Sprintf("%s keys show --home=%s %s", f.ScloudcliBinary, f.ScloudcliHome, name)
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var ko keys.KeyOutput
 	err := clientkeys.UnmarshalJSON([]byte(out), &ko)
@@ -304,88 +304,88 @@ func (f *Fixtures) KeyAddress(name string) sdk.AccAddress {
 }
 
 //___________________________________________________________________________________
-// barkiscli config
+// scloudcli config
 
-// CLIConfig is barkiscli config
+// CLIConfig is scloudcli config
 func (f *Fixtures) CLIConfig(key, value string, flags ...string) {
-	cmd := fmt.Sprintf("%s config --home=%s %s %s", f.BarkiscliBinary, f.BarkiscliHome, key, value)
+	cmd := fmt.Sprintf("%s config --home=%s %s %s", f.ScloudcliBinary, f.ScloudcliHome, key, value)
 	executeWriteCheckErr(f.T, addFlags(cmd, flags))
 }
 
 //___________________________________________________________________________________
-// barkiscli tx send/sign/broadcast
+// scloudcli tx send/sign/broadcast
 
-// TxSend is barkiscli tx send
+// TxSend is scloudcli tx send
 func (f *Fixtures) TxSend(from string, to sdk.AccAddress, amount sdk.Coin, flags ...string) (bool, string, string) {
-	cmd := fmt.Sprintf("%s tx send %s %s %s %v", f.BarkiscliBinary, from, to, amount, f.Flags())
+	cmd := fmt.Sprintf("%s tx send %s %s %s %v", f.ScloudcliBinary, from, to, amount, f.Flags())
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
-// TxSign is barkiscli tx sign
+// TxSign is scloudcli tx sign
 func (f *Fixtures) TxSign(signer, fileName string, flags ...string) (bool, string, string) {
-	cmd := fmt.Sprintf("%s tx sign %v --from=%s %v", f.BarkiscliBinary, f.Flags(), signer, fileName)
+	cmd := fmt.Sprintf("%s tx sign %v --from=%s %v", f.ScloudcliBinary, f.Flags(), signer, fileName)
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
-// TxBroadcast is barkiscli tx broadcast
+// TxBroadcast is scloudcli tx broadcast
 func (f *Fixtures) TxBroadcast(fileName string, flags ...string) (bool, string, string) {
-	cmd := fmt.Sprintf("%s tx broadcast %v %v", f.BarkiscliBinary, f.Flags(), fileName)
+	cmd := fmt.Sprintf("%s tx broadcast %v %v", f.ScloudcliBinary, f.Flags(), fileName)
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
-// TxEncode is barkiscli tx encode
+// TxEncode is scloudcli tx encode
 func (f *Fixtures) TxEncode(fileName string, flags ...string) (bool, string, string) {
-	cmd := fmt.Sprintf("%s tx encode %v %v", f.BarkiscliBinary, f.Flags(), fileName)
+	cmd := fmt.Sprintf("%s tx encode %v %v", f.ScloudcliBinary, f.Flags(), fileName)
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
-// TxMultisign is barkiscli tx multisign
+// TxMultisign is scloudcli tx multisign
 func (f *Fixtures) TxMultisign(fileName, name string, signaturesFiles []string,
 	flags ...string) (bool, string, string) {
 
-	cmd := fmt.Sprintf("%s tx multisign %v %s %s %s", f.BarkiscliBinary, f.Flags(),
+	cmd := fmt.Sprintf("%s tx multisign %v %s %s %s", f.ScloudcliBinary, f.Flags(),
 		fileName, name, strings.Join(signaturesFiles, " "),
 	)
 	return executeWriteRetStdStreams(f.T, cmd)
 }
 
 //___________________________________________________________________________________
-// barkiscli tx staking
+// scloudcli tx staking
 
-// TxStakingCreateValidator is barkiscli tx staking create-validator
+// TxStakingCreateValidator is scloudcli tx staking create-validator
 func (f *Fixtures) TxStakingCreateValidator(from, consPubKey string, amount sdk.Coin, flags ...string) (bool, string, string) {
-	cmd := fmt.Sprintf("%s tx staking create-validator %v --from=%s --pubkey=%s", f.BarkiscliBinary, f.Flags(), from, consPubKey)
+	cmd := fmt.Sprintf("%s tx staking create-validator %v --from=%s --pubkey=%s", f.ScloudcliBinary, f.Flags(), from, consPubKey)
 	cmd += fmt.Sprintf(" --amount=%v --moniker=%v --commission-rate=%v", amount, from, "0.05")
 	cmd += fmt.Sprintf(" --commission-max-rate=%v --commission-max-change-rate=%v", "0.20", "0.10")
 	cmd += fmt.Sprintf(" --min-self-delegation=%v", "1")
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
-// TxStakingUnbond is barkiscli tx staking unbond
+// TxStakingUnbond is scloudcli tx staking unbond
 func (f *Fixtures) TxStakingUnbond(from, shares string, validator sdk.ValAddress, flags ...string) bool {
-	cmd := fmt.Sprintf("%s tx staking unbond %s %v --from=%s %v", f.BarkiscliBinary, validator, shares, from, f.Flags())
+	cmd := fmt.Sprintf("%s tx staking unbond %s %v --from=%s %v", f.ScloudcliBinary, validator, shares, from, f.Flags())
 	return executeWrite(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
 //___________________________________________________________________________________
-// barkiscli tx gov
+// scloudcli tx gov
 
-// TxGovSubmitProposal is barkiscli tx gov submit-proposal
+// TxGovSubmitProposal is scloudcli tx gov submit-proposal
 func (f *Fixtures) TxGovSubmitProposal(from, typ, title, description string, deposit sdk.Coin, flags ...string) (bool, string, string) {
-	cmd := fmt.Sprintf("%s tx gov submit-proposal %v --from=%s --type=%s", f.BarkiscliBinary, f.Flags(), from, typ)
+	cmd := fmt.Sprintf("%s tx gov submit-proposal %v --from=%s --type=%s", f.ScloudcliBinary, f.Flags(), from, typ)
 	cmd += fmt.Sprintf(" --title=%s --description=%s --deposit=%s", title, description, deposit)
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
-// TxGovDeposit is barkiscli tx gov deposit
+// TxGovDeposit is scloudcli tx gov deposit
 func (f *Fixtures) TxGovDeposit(proposalID int, from string, amount sdk.Coin, flags ...string) (bool, string, string) {
-	cmd := fmt.Sprintf("%s tx gov deposit %d %s --from=%s %v", f.BarkiscliBinary, proposalID, amount, from, f.Flags())
+	cmd := fmt.Sprintf("%s tx gov deposit %d %s --from=%s %v", f.ScloudcliBinary, proposalID, amount, from, f.Flags())
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
-// TxGovVote is barkiscli tx gov vote
+// TxGovVote is scloudcli tx gov vote
 func (f *Fixtures) TxGovVote(proposalID int, option gov.VoteOption, from string, flags ...string) (bool, string, string) {
-	cmd := fmt.Sprintf("%s tx gov vote %d %s --from=%s %v", f.BarkiscliBinary, proposalID, option, from, f.Flags())
+	cmd := fmt.Sprintf("%s tx gov vote %d %s --from=%s %v", f.ScloudcliBinary, proposalID, option, from, f.Flags())
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
@@ -397,7 +397,7 @@ func (f *Fixtures) TxGovSubmitParamChangeProposal(
 
 	cmd := fmt.Sprintf(
 		"%s tx gov submit-proposal param-change %s --from=%s %v",
-		f.BarkiscliBinary, proposalPath, from, f.Flags(),
+		f.ScloudcliBinary, proposalPath, from, f.Flags(),
 	)
 
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
@@ -411,18 +411,18 @@ func (f *Fixtures) TxGovSubmitCommunityPoolSpendProposal(
 
 	cmd := fmt.Sprintf(
 		"%s tx gov submit-proposal community-pool-spend %s --from=%s %v",
-		f.BarkiscliBinary, proposalPath, from, f.Flags(),
+		f.ScloudcliBinary, proposalPath, from, f.Flags(),
 	)
 
 	return executeWriteRetStdStreams(f.T, addFlags(cmd, flags), client.DefaultKeyPass)
 }
 
 //___________________________________________________________________________________
-// barkiscli query account
+// scloudcli query account
 
-// QueryAccount is barkiscli query account
+// QueryAccount is scloudcli query account
 func (f *Fixtures) QueryAccount(address sdk.AccAddress, flags ...string) auth.BaseAccount {
-	cmd := fmt.Sprintf("%s query account %s %v", f.BarkiscliBinary, address, f.Flags())
+	cmd := fmt.Sprintf("%s query account %s %v", f.ScloudcliBinary, address, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var initRes map[string]json.RawMessage
 	err := json.Unmarshal([]byte(out), &initRes)
@@ -437,11 +437,11 @@ func (f *Fixtures) QueryAccount(address sdk.AccAddress, flags ...string) auth.Ba
 }
 
 //___________________________________________________________________________________
-// barkiscli query txs
+// scloudcli query txs
 
-// QueryTxs is barkiscli query txs
+// QueryTxs is scloudcli query txs
 func (f *Fixtures) QueryTxs(page, limit int, tags ...string) *sdk.SearchTxsResult {
-	cmd := fmt.Sprintf("%s query txs --page=%d --limit=%d --tags='%s' %v", f.BarkiscliBinary, page, limit, queryTags(tags), f.Flags())
+	cmd := fmt.Sprintf("%s query txs --page=%d --limit=%d --tags='%s' %v", f.ScloudcliBinary, page, limit, queryTags(tags), f.Flags())
 	out, _ := tests.ExecuteT(f.T, cmd, "")
 	var result sdk.SearchTxsResult
 	cdc := app.MakeCodec()
@@ -452,17 +452,17 @@ func (f *Fixtures) QueryTxs(page, limit int, tags ...string) *sdk.SearchTxsResul
 
 // QueryTxsInvalid query txs with wrong parameters and compare expected error
 func (f *Fixtures) QueryTxsInvalid(expectedErr error, page, limit int, tags ...string) {
-	cmd := fmt.Sprintf("%s query txs --page=%d --limit=%d --tags='%s' %v", f.BarkiscliBinary, page, limit, queryTags(tags), f.Flags())
+	cmd := fmt.Sprintf("%s query txs --page=%d --limit=%d --tags='%s' %v", f.ScloudcliBinary, page, limit, queryTags(tags), f.Flags())
 	_, err := tests.ExecuteT(f.T, cmd, "")
 	require.EqualError(f.T, expectedErr, err)
 }
 
 //___________________________________________________________________________________
-// barkiscli query staking
+// scloudcli query staking
 
-// QueryStakingValidator is barkiscli query staking validator
+// QueryStakingValidator is scloudcli query staking validator
 func (f *Fixtures) QueryStakingValidator(valAddr sdk.ValAddress, flags ...string) staking.Validator {
-	cmd := fmt.Sprintf("%s query staking validator %s %v", f.BarkiscliBinary, valAddr, f.Flags())
+	cmd := fmt.Sprintf("%s query staking validator %s %v", f.ScloudcliBinary, valAddr, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var validator staking.Validator
 	cdc := app.MakeCodec()
@@ -471,9 +471,9 @@ func (f *Fixtures) QueryStakingValidator(valAddr sdk.ValAddress, flags ...string
 	return validator
 }
 
-// QueryStakingUnbondingDelegationsFrom is barkiscli query staking unbonding-delegations-from
+// QueryStakingUnbondingDelegationsFrom is scloudcli query staking unbonding-delegations-from
 func (f *Fixtures) QueryStakingUnbondingDelegationsFrom(valAddr sdk.ValAddress, flags ...string) []staking.UnbondingDelegation {
-	cmd := fmt.Sprintf("%s query staking unbonding-delegations-from %s %v", f.BarkiscliBinary, valAddr, f.Flags())
+	cmd := fmt.Sprintf("%s query staking unbonding-delegations-from %s %v", f.ScloudcliBinary, valAddr, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var ubds []staking.UnbondingDelegation
 	cdc := app.MakeCodec()
@@ -482,9 +482,9 @@ func (f *Fixtures) QueryStakingUnbondingDelegationsFrom(valAddr sdk.ValAddress, 
 	return ubds
 }
 
-// QueryStakingDelegationsTo is barkiscli query staking delegations-to
+// QueryStakingDelegationsTo is scloudcli query staking delegations-to
 func (f *Fixtures) QueryStakingDelegationsTo(valAddr sdk.ValAddress, flags ...string) []staking.Delegation {
-	cmd := fmt.Sprintf("%s query staking delegations-to %s %v", f.BarkiscliBinary, valAddr, f.Flags())
+	cmd := fmt.Sprintf("%s query staking delegations-to %s %v", f.ScloudcliBinary, valAddr, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var delegations []staking.Delegation
 	cdc := app.MakeCodec()
@@ -493,9 +493,9 @@ func (f *Fixtures) QueryStakingDelegationsTo(valAddr sdk.ValAddress, flags ...st
 	return delegations
 }
 
-// QueryStakingPool is barkiscli query staking pool
+// QueryStakingPool is scloudcli query staking pool
 func (f *Fixtures) QueryStakingPool(flags ...string) staking.Pool {
-	cmd := fmt.Sprintf("%s query staking pool %v", f.BarkiscliBinary, f.Flags())
+	cmd := fmt.Sprintf("%s query staking pool %v", f.ScloudcliBinary, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var pool staking.Pool
 	cdc := app.MakeCodec()
@@ -504,9 +504,9 @@ func (f *Fixtures) QueryStakingPool(flags ...string) staking.Pool {
 	return pool
 }
 
-// QueryStakingParameters is barkiscli query staking parameters
+// QueryStakingParameters is scloudcli query staking parameters
 func (f *Fixtures) QueryStakingParameters(flags ...string) staking.Params {
-	cmd := fmt.Sprintf("%s query staking params %v", f.BarkiscliBinary, f.Flags())
+	cmd := fmt.Sprintf("%s query staking params %v", f.ScloudcliBinary, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var params staking.Params
 	cdc := app.MakeCodec()
@@ -516,11 +516,11 @@ func (f *Fixtures) QueryStakingParameters(flags ...string) staking.Params {
 }
 
 //___________________________________________________________________________________
-// barkiscli query gov
+// scloudcli query gov
 
-// QueryGovParamDeposit is barkiscli query gov param deposit
+// QueryGovParamDeposit is scloudcli query gov param deposit
 func (f *Fixtures) QueryGovParamDeposit() gov.DepositParams {
-	cmd := fmt.Sprintf("%s query gov param deposit %s", f.BarkiscliBinary, f.Flags())
+	cmd := fmt.Sprintf("%s query gov param deposit %s", f.ScloudcliBinary, f.Flags())
 	out, _ := tests.ExecuteT(f.T, cmd, "")
 	var depositParam gov.DepositParams
 	cdc := app.MakeCodec()
@@ -529,9 +529,9 @@ func (f *Fixtures) QueryGovParamDeposit() gov.DepositParams {
 	return depositParam
 }
 
-// QueryGovParamVoting is barkiscli query gov param voting
+// QueryGovParamVoting is scloudcli query gov param voting
 func (f *Fixtures) QueryGovParamVoting() gov.VotingParams {
-	cmd := fmt.Sprintf("%s query gov param voting %s", f.BarkiscliBinary, f.Flags())
+	cmd := fmt.Sprintf("%s query gov param voting %s", f.ScloudcliBinary, f.Flags())
 	out, _ := tests.ExecuteT(f.T, cmd, "")
 	var votingParam gov.VotingParams
 	cdc := app.MakeCodec()
@@ -540,9 +540,9 @@ func (f *Fixtures) QueryGovParamVoting() gov.VotingParams {
 	return votingParam
 }
 
-// QueryGovParamTallying is barkiscli query gov param tallying
+// QueryGovParamTallying is scloudcli query gov param tallying
 func (f *Fixtures) QueryGovParamTallying() gov.TallyParams {
-	cmd := fmt.Sprintf("%s query gov param tallying %s", f.BarkiscliBinary, f.Flags())
+	cmd := fmt.Sprintf("%s query gov param tallying %s", f.ScloudcliBinary, f.Flags())
 	out, _ := tests.ExecuteT(f.T, cmd, "")
 	var tallyingParam gov.TallyParams
 	cdc := app.MakeCodec()
@@ -551,9 +551,9 @@ func (f *Fixtures) QueryGovParamTallying() gov.TallyParams {
 	return tallyingParam
 }
 
-// QueryGovProposals is barkiscli query gov proposals
+// QueryGovProposals is scloudcli query gov proposals
 func (f *Fixtures) QueryGovProposals(flags ...string) gov.Proposals {
-	cmd := fmt.Sprintf("%s query gov proposals %v", f.BarkiscliBinary, f.Flags())
+	cmd := fmt.Sprintf("%s query gov proposals %v", f.ScloudcliBinary, f.Flags())
 	stdout, stderr := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	if strings.Contains(stderr, "No matching proposals found") {
 		return gov.Proposals{}
@@ -566,9 +566,9 @@ func (f *Fixtures) QueryGovProposals(flags ...string) gov.Proposals {
 	return out
 }
 
-// QueryGovProposal is barkiscli query gov proposal
+// QueryGovProposal is scloudcli query gov proposal
 func (f *Fixtures) QueryGovProposal(proposalID int, flags ...string) gov.Proposal {
-	cmd := fmt.Sprintf("%s query gov proposal %d %v", f.BarkiscliBinary, proposalID, f.Flags())
+	cmd := fmt.Sprintf("%s query gov proposal %d %v", f.ScloudcliBinary, proposalID, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var proposal gov.Proposal
 	cdc := app.MakeCodec()
@@ -577,9 +577,9 @@ func (f *Fixtures) QueryGovProposal(proposalID int, flags ...string) gov.Proposa
 	return proposal
 }
 
-// QueryGovVote is barkiscli query gov vote
+// QueryGovVote is scloudcli query gov vote
 func (f *Fixtures) QueryGovVote(proposalID int, voter sdk.AccAddress, flags ...string) gov.Vote {
-	cmd := fmt.Sprintf("%s query gov vote %d %s %v", f.BarkiscliBinary, proposalID, voter, f.Flags())
+	cmd := fmt.Sprintf("%s query gov vote %d %s %v", f.ScloudcliBinary, proposalID, voter, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var vote gov.Vote
 	cdc := app.MakeCodec()
@@ -588,9 +588,9 @@ func (f *Fixtures) QueryGovVote(proposalID int, voter sdk.AccAddress, flags ...s
 	return vote
 }
 
-// QueryGovVotes is barkiscli query gov votes
+// QueryGovVotes is scloudcli query gov votes
 func (f *Fixtures) QueryGovVotes(proposalID int, flags ...string) []gov.Vote {
-	cmd := fmt.Sprintf("%s query gov votes %d %v", f.BarkiscliBinary, proposalID, f.Flags())
+	cmd := fmt.Sprintf("%s query gov votes %d %v", f.ScloudcliBinary, proposalID, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var votes []gov.Vote
 	cdc := app.MakeCodec()
@@ -599,9 +599,9 @@ func (f *Fixtures) QueryGovVotes(proposalID int, flags ...string) []gov.Vote {
 	return votes
 }
 
-// QueryGovDeposit is barkiscli query gov deposit
+// QueryGovDeposit is scloudcli query gov deposit
 func (f *Fixtures) QueryGovDeposit(proposalID int, depositor sdk.AccAddress, flags ...string) gov.Deposit {
-	cmd := fmt.Sprintf("%s query gov deposit %d %s %v", f.BarkiscliBinary, proposalID, depositor, f.Flags())
+	cmd := fmt.Sprintf("%s query gov deposit %d %s %v", f.ScloudcliBinary, proposalID, depositor, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var deposit gov.Deposit
 	cdc := app.MakeCodec()
@@ -610,9 +610,9 @@ func (f *Fixtures) QueryGovDeposit(proposalID int, depositor sdk.AccAddress, fla
 	return deposit
 }
 
-// QueryGovDeposits is barkiscli query gov deposits
+// QueryGovDeposits is scloudcli query gov deposits
 func (f *Fixtures) QueryGovDeposits(propsalID int, flags ...string) []gov.Deposit {
-	cmd := fmt.Sprintf("%s query gov deposits %d %v", f.BarkiscliBinary, propsalID, f.Flags())
+	cmd := fmt.Sprintf("%s query gov deposits %d %v", f.ScloudcliBinary, propsalID, f.Flags())
 	out, _ := tests.ExecuteT(f.T, addFlags(cmd, flags), "")
 	var deposits []gov.Deposit
 	cdc := app.MakeCodec()
@@ -626,7 +626,7 @@ func (f *Fixtures) QueryGovDeposits(propsalID int, flags ...string) []gov.Deposi
 
 // QuerySigningInfo returns the signing info for a validator
 func (f *Fixtures) QuerySigningInfo(val string) slashing.ValidatorSigningInfo {
-	cmd := fmt.Sprintf("%s query slashing signing-info %s %s", f.BarkiscliBinary, val, f.Flags())
+	cmd := fmt.Sprintf("%s query slashing signing-info %s %s", f.ScloudcliBinary, val, f.Flags())
 	res, errStr := tests.ExecuteT(f.T, cmd, "")
 	require.Empty(f.T, errStr)
 	cdc := app.MakeCodec()
@@ -636,9 +636,9 @@ func (f *Fixtures) QuerySigningInfo(val string) slashing.ValidatorSigningInfo {
 	return sinfo
 }
 
-// QuerySlashingParams is barkiscli query slashing params
+// QuerySlashingParams is scloudcli query slashing params
 func (f *Fixtures) QuerySlashingParams() slashing.Params {
-	cmd := fmt.Sprintf("%s query slashing params %s", f.BarkiscliBinary, f.Flags())
+	cmd := fmt.Sprintf("%s query slashing params %s", f.ScloudcliBinary, f.Flags())
 	res, errStr := tests.ExecuteT(f.T, cmd, "")
 	require.Empty(f.T, errStr)
 	cdc := app.MakeCodec()
@@ -653,7 +653,7 @@ func (f *Fixtures) QuerySlashingParams() slashing.Params {
 
 // QueryRewards returns the rewards of a delegator
 func (f *Fixtures) QueryRewards(delAddr sdk.AccAddress, flags ...string) distribution.QueryDelegatorTotalRewardsResponse {
-	cmd := fmt.Sprintf("%s query distribution rewards %s %s", f.BarkiscliBinary, delAddr, f.Flags())
+	cmd := fmt.Sprintf("%s query distribution rewards %s %s", f.ScloudcliBinary, delAddr, f.Flags())
 	res, errStr := tests.ExecuteT(f.T, cmd, "")
 	require.Empty(f.T, errStr)
 	cdc := app.MakeCodec()
@@ -668,7 +668,7 @@ func (f *Fixtures) QueryRewards(delAddr sdk.AccAddress, flags ...string) distrib
 
 // QueryTotalSupply returns the total supply of coins
 func (f *Fixtures) QueryTotalSupply(flags ...string) (totalSupply sdk.Coins) {
-	cmd := fmt.Sprintf("%s query supply total %s", f.BarkiscliBinary, f.Flags())
+	cmd := fmt.Sprintf("%s query supply total %s", f.ScloudcliBinary, f.Flags())
 	res, errStr := tests.ExecuteT(f.T, cmd, "")
 	require.Empty(f.T, errStr)
 	cdc := app.MakeCodec()
@@ -679,7 +679,7 @@ func (f *Fixtures) QueryTotalSupply(flags ...string) (totalSupply sdk.Coins) {
 
 // QueryTotalSupplyOf returns the total supply of a given coin denom
 func (f *Fixtures) QueryTotalSupplyOf(denom string, flags ...string) sdk.Int {
-	cmd := fmt.Sprintf("%s query supply total %s %s", f.BarkiscliBinary, denom, f.Flags())
+	cmd := fmt.Sprintf("%s query supply total %s %s", f.ScloudcliBinary, denom, f.Flags())
 	res, errStr := tests.ExecuteT(f.T, cmd, "")
 	require.Empty(f.T, errStr)
 	cdc := app.MakeCodec()

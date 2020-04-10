@@ -5,7 +5,7 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 var _ sdk.MultiStore = multiStore{}

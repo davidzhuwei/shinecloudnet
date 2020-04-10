@@ -25,7 +25,7 @@ import (
 	"github.com/shinecloudfoundation/shinecloudnet/x/staking"
 )
 
-// barkisd custom flags
+// scloud custom flags
 const flagInvCheckPeriod = "inv-check-period"
 
 var invCheckPeriod uint
@@ -42,8 +42,8 @@ func main() {
 	ctx := app.ShineContext
 	cobra.EnableCommandSorting = false
 	rootCmd := &cobra.Command{
-		Use:               "barkisd",
-		Short:             "Barkis Daemon (server)",
+		Use:               "scloud",
+		Short:             "Scloud Daemon (server)",
 		PersistentPreRunE: server.PersistentPreRunEFn(ctx),
 	}
 

@@ -45,8 +45,8 @@ func main() {
 	// with the cdc
 
 	rootCmd := &cobra.Command{
-		Use:   "barkiscli",
-		Short: "Command line interface for interacting with barkisd",
+		Use:   "scloudcli",
+		Short: "Command line interface for interacting with scloud",
 	}
 
 	// Add --chain-id to persistent flags and mark it required

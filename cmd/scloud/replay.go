@@ -27,7 +27,7 @@ import (
 func replayCmd() *cobra.Command {
 	return &cobra.Command{
 		Use:   "replay <root-dir>",
-		Short: "Replay barkis transactions",
+		Short: "Replay scloud transactions",
 		RunE: func(_ *cobra.Command, args []string) error {
 			return replayTxs(args[0])
 		},

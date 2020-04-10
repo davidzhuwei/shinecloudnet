@@ -7,7 +7,7 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 func TestStore(t *testing.T) {

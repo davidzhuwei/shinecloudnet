@@ -14,7 +14,7 @@ import (
 	"github.com/tendermint/tendermint/crypto"
 	"github.com/tendermint/tendermint/crypto/ed25519"
 
-	barkis "github.com/shinecloudfoundation/shinecloudnet/app"
+	scloud "github.com/shinecloudfoundation/shinecloudnet/app"
 
 	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
@@ -36,14 +36,14 @@ func init() {
 }
 
 var rootCmd = &cobra.Command{
-	Use:          "barkisdebug",
-	Short:        "Barkis debug tool",
+	Use:          "sclouddebug",
+	Short:        "Scloud debug tool",
 	SilenceUsage: true,
 }
 
 var txCmd = &cobra.Command{
 	Use:   "tx",
-	Short: "Decode a barkis tx from hex or base64",
+	Short: "Decode a scloud tx from hex or base64",
 	RunE:  runTxCmd,
 }
 
@@ -139,7 +139,7 @@ func runPubKeyCmd(cmd *cobra.Command, args []string) error {
 		pubkeyBytes = pubKey[:]
 	}
 
-	cdc := barkis.MakeCodec()
+	cdc := scloud.MakeCodec()
 	pubKeyJSONBytes, err := cdc.MarshalJSON(pubKey)
 	if err != nil {
 		return err
@@ -226,7 +226,7 @@ func runTxCmd(cmd *cobra.Command, args []string) error {
 	}
 
 	var tx = auth.StdTx{}
-	cdc := barkis.MakeCodec()
+	cdc := scloud.MakeCodec()
 
 	err = cdc.UnmarshalBinaryLengthPrefixed(txBytes, &tx)
 	if err != nil {

@@ -1,4 +1,4 @@
-## PGP keys of Gitian builders and Barkis Developers
+## PGP keys of Gitian builders and Scloud Developers
 
 The file `keys.txt` contains fingerprints of the public keys of Gitian builders
 and active developers.
@@ -25,5 +25,5 @@ do gpg --keyserver hkp://subset.pool.sks-keyservers.net \
 --recv-keys ${fingerprint}; done < ./keys.txt
 ```
 
-Add your key to the list if you are a Barkis core developer or you have
-provided Gitian signatures for two major or minor releases of Barkis.
+Add your key to the list if you are a Scloud core developer or you have
+provided Gitian signatures for two major or minor releases of Scloud.

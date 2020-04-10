@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"fmt"
 
-	sdk "github.com/barkisnet/barkis/types"
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 // An sdk.Tx which is its own sdk.Msg.

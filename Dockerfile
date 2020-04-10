@@ -1,14 +1,14 @@
 # Simple usage with a mounted data directory:
-# > docker build -t barkis .
-# > docker run -it -p 46657:46657 -p 46656:46656 -v ~/.barkisd:/root/.barkisd -v ~/.barkiscli:/root/.barkiscli barkis barkisd init
-# > docker run -it -p 46657:46657 -p 46656:46656 -v ~/.barkisd:/root/.barkisd -v ~/.barkiscli:/root/.barkiscli barkis barkisd start
+# > docker build -t scloud .
+# > docker run -it -p 46657:46657 -p 46656:46656 -v ~/.scloud:/root/.scloud -v ~/.scloudcli:/root/.scloudcli scloud scloud init
+# > docker run -it -p 46657:46657 -p 46656:46656 -v ~/.scloud:/root/.scloud -v ~/.scloudcli:/root/.scloudcli scloud scloud start
 FROM golang:alpine AS build-env
 
 # Set up dependencies
 ENV PACKAGES curl make git libc-dev bash gcc linux-headers eudev-dev python
 
 # Set working directory for the build
-WORKDIR /go/src/github.com/barkisnet/barkis
+WORKDIR /go/src/github.com/shinecloudfoundation/shinecloudnet
 
 # Add source files
 COPY . .
@@ -26,8 +26,8 @@ RUN apk add --update ca-certificates
 WORKDIR /root
 
 # Copy over binaries from the build-env
-COPY --from=build-env /go/bin/barkisd /usr/bin/barkisd
-COPY --from=build-env /go/bin/barkiscli /usr/bin/barkiscli
+COPY --from=build-env /go/bin/scloud /usr/bin/scloud
+COPY --from=build-env /go/bin/scloudcli /usr/bin/scloudcli
 
-# Run barkisd by default, omit entrypoint to ease using container with barkiscli
-CMD ["barkisd"]
+# Run scloud by default, omit entrypoint to ease using container with scloudcli
+CMD ["scloud"]

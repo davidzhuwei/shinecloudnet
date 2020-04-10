@@ -13,7 +13,7 @@ import (
 	"github.com/shinecloudfoundation/shinecloudnet/x/staking"
 )
 
-// export the state of barkis for a genesis file
+// export the state of scloud for a genesis file
 func (app *ShineApp) ExportAppStateAndValidators(forZeroHeight bool, jailWhiteList []string,
 ) (appState json.RawMessage, validators []tmtypes.GenesisValidator, err error) {
 	// as if they could withdraw from the start of the next block

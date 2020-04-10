@@ -30,7 +30,7 @@ import (
 	"github.com/shinecloudfoundation/shinecloudnet/x/mint"
 )
 
-func TestBarkisCLIKeysAddMultisig(t *testing.T) {
+func TestScloudCLIKeysAddMultisig(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
@@ -53,7 +53,7 @@ func TestBarkisCLIKeysAddMultisig(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIKeysAddRecover(t *testing.T) {
+func TestScloudCLIKeysAddRecover(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
@@ -68,7 +68,7 @@ func TestBarkisCLIKeysAddRecover(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIKeysAddRecoverHDPath(t *testing.T) {
+func TestScloudCLIKeysAddRecoverHDPath(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
@@ -88,11 +88,11 @@ func TestBarkisCLIKeysAddRecoverHDPath(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIMinimumFees(t *testing.T) {
+func TestScloudCLIMinimumFees(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server with minimum fees
+	// start scloud server with minimum fees
 	minGasPrice, _ := sdk.NewDecFromStr("0.000006")
 	fees := fmt.Sprintf(
 		"--minimum-gas-prices=%s,%s",
@@ -126,11 +126,11 @@ func TestBarkisCLIMinimumFees(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIGasPrices(t *testing.T) {
+func TestScloudCLIGasPrices(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server with minimum fees
+	// start scloud server with minimum fees
 	minGasPrice, _ := sdk.NewDecFromStr("0.000006")
 	proc := f.GDStart(fmt.Sprintf("--minimum-gas-prices=%s", sdk.NewDecCoinFromDec(feeDenom, minGasPrice)))
 	defer proc.Stop(false)
@@ -160,11 +160,11 @@ func TestBarkisCLIGasPrices(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIFeesDeduction(t *testing.T) {
+func TestScloudCLIFeesDeduction(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server with minimum fees
+	// start scloud server with minimum fees
 	minGasPrice, _ := sdk.NewDecFromStr("0.000006")
 	proc := f.GDStart(fmt.Sprintf("--minimum-gas-prices=%s", sdk.NewDecCoinFromDec(feeDenom, minGasPrice)))
 	defer proc.Stop(false)
@@ -213,11 +213,11 @@ func TestBarkisCLIFeesDeduction(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLISend(t *testing.T) {
+func TestScloudCLISend(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -282,11 +282,11 @@ func TestBarkisCLISend(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIGasAuto(t *testing.T) {
+func TestScloudCLIGasAuto(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -342,11 +342,11 @@ func TestBarkisCLIGasAuto(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLICreateValidator(t *testing.T) {
+func TestScloudCLICreateValidator(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -415,7 +415,7 @@ func TestBarkisCLICreateValidator(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIQueryRewards(t *testing.T) {
+func TestScloudCLIQueryRewards(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 	cdc := app.MakeCodec()
@@ -431,13 +431,13 @@ func TestBarkisCLIQueryRewards(t *testing.T) {
 	require.NoError(t, err)
 	genesisState[mint.ModuleName] = mintDataBz
 
-	genFile := filepath.Join(f.BarkisdHome, "config", "genesis.json")
+	genFile := filepath.Join(f.ScloudHome, "config", "genesis.json")
 	genDoc, err := tmtypes.GenesisDocFromFile(genFile)
 	require.NoError(t, err)
 	genDoc.AppState, err = cdc.MarshalJSON(genesisState)
 	require.NoError(t, genDoc.SaveAs(genFile))
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -448,11 +448,11 @@ func TestBarkisCLIQueryRewards(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIQuerySupply(t *testing.T) {
+func TestScloudCLIQuerySupply(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -465,11 +465,11 @@ func TestBarkisCLIQuerySupply(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLISubmitProposal(t *testing.T) {
+func TestScloudCLISubmitProposal(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -609,7 +609,7 @@ func TestBarkisCLISubmitProposal(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLISubmitParamChangeProposal(t *testing.T) {
+func TestScloudCLISubmitParamChangeProposal(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
@@ -673,7 +673,7 @@ func TestBarkisCLISubmitParamChangeProposal(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLISubmitCommunityPoolSpendProposal(t *testing.T) {
+func TestScloudCLISubmitCommunityPoolSpendProposal(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
@@ -690,7 +690,7 @@ func TestBarkisCLISubmitCommunityPoolSpendProposal(t *testing.T) {
 	require.NoError(t, err)
 	genesisState[mint.ModuleName] = mintDataBz
 
-	genFile := filepath.Join(f.BarkisdHome, "config", "genesis.json")
+	genFile := filepath.Join(f.ScloudHome, "config", "genesis.json")
 	genDoc, err := tmtypes.GenesisDocFromFile(genFile)
 	require.NoError(t, err)
 	genDoc.AppState, err = cdc.MarshalJSON(genesisState)
@@ -757,11 +757,11 @@ func TestBarkisCLISubmitCommunityPoolSpendProposal(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIQueryTxPagination(t *testing.T) {
+func TestScloudCLIQueryTxPagination(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -807,11 +807,11 @@ func TestBarkisCLIQueryTxPagination(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIValidateSignatures(t *testing.T) {
+func TestScloudCLIValidateSignatures(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -857,11 +857,11 @@ func TestBarkisCLIValidateSignatures(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLISendGenerateSignAndBroadcast(t *testing.T) {
+func TestScloudCLISendGenerateSignAndBroadcast(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -941,11 +941,11 @@ func TestBarkisCLISendGenerateSignAndBroadcast(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIMultisignInsufficientCosigners(t *testing.T) {
+func TestScloudCLIMultisignInsufficientCosigners(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server with minimum fees
+	// start scloud server with minimum fees
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -994,11 +994,11 @@ func TestBarkisCLIMultisignInsufficientCosigners(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIEncode(t *testing.T) {
+func TestScloudCLIEncode(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -1032,11 +1032,11 @@ func TestBarkisCLIEncode(t *testing.T) {
 	require.Equal(t, "deadbeef", decodedTx.Memo)
 }
 
-func TestBarkisCLIMultisignSortSignatures(t *testing.T) {
+func TestScloudCLIMultisignSortSignatures(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server with minimum fees
+	// start scloud server with minimum fees
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -1097,11 +1097,11 @@ func TestBarkisCLIMultisignSortSignatures(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIMultisign(t *testing.T) {
+func TestScloudCLIMultisign(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server with minimum fees
+	// start scloud server with minimum fees
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -1163,7 +1163,7 @@ func TestBarkisCLIMultisign(t *testing.T) {
 	f.Cleanup()
 }
 
-func TestBarkisCLIConfig(t *testing.T) {
+func TestScloudCLIConfig(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 	node := fmt.Sprintf("%s:%s", f.RPCAddr, f.Port)
@@ -1177,7 +1177,7 @@ func TestBarkisCLIConfig(t *testing.T) {
 	f.CLIConfig("trace", "false")
 	f.CLIConfig("indent", "true")
 
-	config, err := ioutil.ReadFile(path.Join(f.BarkiscliHome, "config", "config.toml"))
+	config, err := ioutil.ReadFile(path.Join(f.ScloudcliHome, "config", "config.toml"))
 	require.NoError(t, err)
 	expectedConfig := fmt.Sprintf(`broadcast-mode = "block"
 chain-id = "%s"
@@ -1192,7 +1192,7 @@ trust-node = true
 	f.Cleanup()
 }
 
-func TestBarkisdCollectGentxs(t *testing.T) {
+func TestScloudCollectGentxs(t *testing.T) {
 	t.Parallel()
 	var customMaxBytes, customMaxGas int64 = 99999999, 1234567
 	f := NewFixtures(t)
@@ -1240,7 +1240,7 @@ func TestBarkisdCollectGentxs(t *testing.T) {
 	f.Cleanup(gentxDir)
 }
 
-func TestBarkisdAddGenesisAccount(t *testing.T) {
+func TestScloudAddGenesisAccount(t *testing.T) {
 	t.Parallel()
 	f := NewFixtures(t)
 
@@ -1287,7 +1287,7 @@ func TestSlashingGetParams(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 
@@ -1308,7 +1308,7 @@ func TestValidateGenesis(t *testing.T) {
 	t.Parallel()
 	f := InitFixtures(t)
 
-	// start barkisd server
+	// start scloud server
 	proc := f.GDStart()
 	defer proc.Stop(false)
 

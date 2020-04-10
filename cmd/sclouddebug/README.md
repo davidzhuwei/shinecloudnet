@@ -1,4 +1,4 @@
-# Barkisdebug
+# sclouddebug
 
 Simple tool for simple debugging.
 
@@ -11,8 +11,8 @@ Note we often encode bytes as hex in the logs, but as base64 in the JSON.
 The following give the same result:
 
 ```
-barkisdebug pubkey TZTQnfqOsi89SeoXVnIw+tnFJnr4X8qVC0U8AsEmFk4=
-barkisdebug pubkey 4D94D09DFA8EB22F3D49EA17567230FAD9C5267AF85FCA950B453C02C126164E
+sclouddebug pubkey TZTQnfqOsi89SeoXVnIw+tnFJnr4X8qVC0U8AsEmFk4=
+sclouddebug pubkey 4D94D09DFA8EB22F3D49EA17567230FAD9C5267AF85FCA950B453C02C126164E
 ```
 
 ## Txs
@@ -20,16 +20,11 @@ barkisdebug pubkey 4D94D09DFA8EB22F3D49EA17567230FAD9C5267AF85FCA950B453C02C1261
 Pass in a hex/base64 tx and get back the full JSON
 
 ```
-barkisdebug tx <hex or base64 transaction>
+sclouddebug tx <hex or base64 transaction>
 ```
 
 ## Hack
 
 This is a command with boilerplate for using Go as a scripting language to hack
-on an existing Barkis state.
+on an existing scloud state.
 
-Currently we have an example for the state of barkis-6001 after it
-[crashed](https://github.com/cosmos/cosmos-sdk/blob/master/cmd/barkis/testnets/STATUS.md#june-13-2018-230-est---published-postmortem-of-barkis-6001-failure). 
-If you run `barkisdebug hack $HOME/.barkisd` on that 
-state, it will do a binary search on the state history to find when the state
-invariant was violated.

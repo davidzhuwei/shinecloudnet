@@ -348,7 +348,7 @@ func startLCD(logger log.Logger, listenAddr string, cdc *codec.Codec) (net.Liste
 	return listener, nil
 }
 
-// NOTE: If making updates here also update cmd/barkis/cmd/barkiscli/main.go
+// NOTE: If making updates here also update cmd/scloud/cmd/bscloudcli/main.go
 func registerRoutes(rs *lcd.RestServer) {
 	client.RegisterRoutes(rs.CliCtx, rs.Mux)
 	authrest.RegisterTxRoutes(rs.CliCtx, rs.Mux)

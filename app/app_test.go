@@ -15,7 +15,7 @@ import (
 	abci "github.com/tendermint/tendermint/abci/types"
 )
 
-func TestBarkisdExport(t *testing.T) {
+func TestScloudExport(t *testing.T) {
 	db := db.NewMemDB()
 	gapp := NewShineApp(log.NewTMLogger(log.NewSyncWriter(os.Stdout)), db, nil, true, 0)
 	setGenesis(gapp)

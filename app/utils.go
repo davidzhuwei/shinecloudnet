@@ -35,10 +35,10 @@ var (
 
 // DONTCOVER
 
-// NewBarkisAppUNSAFE is used for debugging purposes only.
+// NewScloudAppUNSAFE is used for debugging purposes only.
 //
 // NOTE: to not use this function with non-test code
-func NewBarkisAppUNSAFE(logger log.Logger, db dbm.DB, traceStore io.Writer, loadLatest bool,
+func NewScloudAppUNSAFE(logger log.Logger, db dbm.DB, traceStore io.Writer, loadLatest bool,
 	invCheckPeriod uint, baseAppOptions ...func(*baseapp.BaseApp),
 ) (bapp *ShineApp, keyMain, keyStaking *sdk.KVStoreKey, stakingKeeper staking.Keeper) {
 

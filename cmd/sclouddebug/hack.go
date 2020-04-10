@@ -20,7 +20,7 @@ import (
 
 	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 
-	barkis "github.com/shinecloudfoundation/shinecloudnet/app"
+	scloud "github.com/shinecloudfoundation/shinecloudnet/app"
 )
 
 func runHackCmd(cmd *cobra.Command, args []string) error {
@@ -29,18 +29,18 @@ func runHackCmd(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("Expected 1 arg")
 	}
 
-	// ".barkisd"
+	// ".scloud"
 	dataDir := args[0]
 	dataDir = path.Join(dataDir, "data")
 
 	// load the app
 	logger := log.NewTMLogger(log.NewSyncWriter(os.Stdout))
-	db, err := sdk.NewLevelDB("barkis", dataDir)
+	db, err := sdk.NewLevelDB("scloud", dataDir)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-	app, keyMain, keyStaking, stakingKeeper := barkis.NewBarkisAppUNSAFE(
+	app, keyMain, keyStaking, stakingKeeper := scloud.NewScloudAppUNSAFE(
 		logger, db, nil, false, 0, baseapp.SetPruning(store.NewPruningOptionsFromString(viper.GetString("pruning"))))
 
 	// print some info
@@ -52,7 +52,7 @@ func runHackCmd(cmd *cobra.Command, args []string) error {
 	//----------------------------------------------------
 	// XXX: start hacking!
 	//----------------------------------------------------
-	// eg. barkis-6001 testnet bug
+	// eg. scloud-6001 testnet bug
 	// We paniced when iterating through the "bypower" keys.
 	// The following powerKey was there, but the corresponding "trouble" validator did not exist.
 	// So here we do a binary search on the past states to find when the powerKey first showed up ...

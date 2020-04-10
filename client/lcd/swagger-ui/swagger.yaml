@@ -2,7 +2,7 @@
 swagger: "2.0"
 info:
   version: "3.0"
-  title: Barkis-Lite for Barkisnet
+  title: Scloud-Lite for shinecloudnet
   description: A REST interface for state queries, transaction generation and broadcasting.
 tags:
   - name: Transactions
@@ -298,8 +298,8 @@ paths:
         - in: query
           name: message.sender
           type: string
-          description: "transaction tags with sender: 'GET /txs?message.action=send&message.sender=barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544'"
-          x-example: "barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544"
+          description: "transaction tags with sender: 'GET /txs?message.action=send&message.sender=scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy'"
+          x-example: "scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy"
         - in: query
           name: page
           description: Page number
@@ -589,7 +589,7 @@ paths:
           description: Account address in bech32 format
           required: true
           type: string
-          x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+          x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
       responses:
         200:
           description: Account balances
@@ -614,7 +614,7 @@ paths:
           description: Recepient address in bech32 format
           required: true
           type: string
-          x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+          x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
         - in: body
           name: account
           description: The sender and tx information
@@ -803,7 +803,7 @@ paths:
           description: Account address
           required: true
           type: string
-          x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+          x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
       responses:
         200:
           description: Account information on the blockchain
@@ -836,7 +836,7 @@ paths:
         description: Bech32 AccAddress of Delegator
         required: true
         type: string
-        x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
     get:
       summary: Get all delegations from a delegator
       tags:
@@ -895,7 +895,7 @@ paths:
         description: Bech32 AccAddress of Delegator
         required: true
         type: string
-        x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
       - in: path
         name: validatorAddr
         description: Bech32 OperatorAddress of validator
@@ -924,7 +924,7 @@ paths:
         description: Bech32 AccAddress of Delegator
         required: true
         type: string
-        x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
     get:
       summary: Get all unbonding delegations from a delegator
       tags:
@@ -983,7 +983,7 @@ paths:
         description: Bech32 AccAddress of Delegator
         required: true
         type: string
-        x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
       - in: path
         name: validatorAddr
         description: Bech32 OperatorAddress of validator
@@ -1044,7 +1044,7 @@ paths:
         description: Bech32 AccAddress of Delegator
         required: true
         type: string
-        x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
     post:
       summary: Submit a redelegation
       parameters:
@@ -1086,7 +1086,7 @@ paths:
         description: Bech32 AccAddress of Delegator
         required: true
         type: string
-        x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
     get:
       summary: Query all validators that a delegator is bonded to
       tags:
@@ -1111,7 +1111,7 @@ paths:
         description: Bech32 AccAddress of Delegator
         required: true
         type: string
-        x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
       - in: path
         name: validatorAddr
         description: Bech32 ValAddress of Delegator
@@ -1669,7 +1669,7 @@ paths:
           name: depositor
           required: true
           in: path
-          x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+          x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
       responses:
         200:
           description: OK
@@ -1768,7 +1768,7 @@ paths:
           name: voter
           required: true
           in: path
-          x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+          x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
       responses:
         200:
           description: OK
@@ -1888,7 +1888,7 @@ paths:
         description: Bech32 AccAddress of Delegator
         required: true
         type: string
-        x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
     get:
       summary: Get the total rewards balance from all delegations
       description: Get the sum of all the rewards earned by delegations by a single delegator
@@ -1939,7 +1939,7 @@ paths:
         description: Bech32 AccAddress of Delegator
         required: true
         type: string
-        x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
       - in: path
         name: validatorAddr
         description: Bech32 OperatorAddress of validator
@@ -1998,7 +1998,7 @@ paths:
         description: Bech32 AccAddress of Delegator
         required: true
         type: string
-        x-example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        x-example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
     get:
       summary: Get the rewards withdrawal address
       description: Get the delegations' rewards withdrawal address. This is the address in which the user will receive the reward funds
@@ -2333,7 +2333,7 @@ definitions:
   Address:
     type: string
     description: bech32 encoded address
-    example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+    example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
   ValidatorAddress:
     type: string
     description: bech32 encoded address
@@ -2370,7 +2370,7 @@ definitions:
         example: "bitcoin token"
       owner:
         type: string
-        example: barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544
+        example: scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy
   Hash:
     type: string
     example: EE5F3404034C524501629B56E0DDC38FAD651F04
@@ -2533,7 +2533,7 @@ definitions:
     properties:
       chain_id:
         type: string
-        example: barkisnet
+        example: shinecloudnet
       height:
         type: number
         example: 1
@@ -2657,7 +2657,7 @@ definitions:
     properties:
       from:
         type: string
-        example: "barkis1ka54cl8ep6shtxajr5mvp6f7evj2zvf90qt544"
+        example: "scloud16wfryel63g7axeamw68630wglalcnk3lgn8ehy"
         description: Sender address or Keybase name to generate a transaction
       password:
         type: string
@@ -2667,7 +2667,7 @@ definitions:
         example: "Sent token from light node"
       chain_id:
         type: string
-        example: "barkisnet"
+        example: "shinecloudnet"
       account_number:
         type: string
         example: "0"

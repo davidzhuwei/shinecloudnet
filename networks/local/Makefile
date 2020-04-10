@@ -1,4 +1,4 @@
-# Makefile for the "barkisdnode" docker image.
+# Makefile for the "scloudnode" docker image.
 
 all:
 	docker build --tag tendermint/scloudnode scloudnode
