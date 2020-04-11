@@ -36,7 +36,7 @@ func TestIssueMsgValidation(t *testing.T) {
 
 		{false, CodeInvalidTotalSupply, NewIssueMsg(issuer, "bitcoin", "btc", 9000000000000000001, false, 6, "bitcoin on shinecloudnet")},
 		{false, CodeInvalidDecimal, NewIssueMsg(issuer, "bitcoin", "btc", 21000000000000, false, -1, "bitcoin on shinecloudnet")},
-		{false, CodeInvalidTokenDescription, NewIssueMsg(issuer, "bitcoin", "btc", 21000000000000, false, 6, "bitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnet")},
+		{false, CodeInvalidTokenDescription, NewIssueMsg(issuer, "bitcoin", "btc", 21000000000000, false, 6, "bitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnetbitcoin on shinecloudnet")},
 	}
 
 	for index, tc := range cases {
@@ -44,6 +44,9 @@ func TestIssueMsgValidation(t *testing.T) {
 		if tc.valid {
 			require.Nil(t, err)
 		} else {
+			if err == nil {
+				t.Log(index)
+			}
 			require.NotNil(t, err)
 			require.Equal(t, tc.errCode, err.Code(), fmt.Sprintf("index: %d, errMsg: %s", index, err.Error()))
 		}

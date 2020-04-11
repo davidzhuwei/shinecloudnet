@@ -421,12 +421,11 @@ func TestScloudCLIQueryRewards(t *testing.T) {
 	cdc := app.MakeCodec()
 
 	genesisState := f.GenesisState()
-	inflationMin := sdk.MustNewDecFromStr("10000.0")
 	var mintData mint.GenesisState
 	cdc.UnmarshalJSON(genesisState[mint.ModuleName], &mintData)
-	mintData.Minter.Inflation = inflationMin
-	mintData.Params.InflationMin = inflationMin
-	mintData.Params.InflationMax = sdk.MustNewDecFromStr("15000.0")
+	mintData.Minter.RemainedTokens = nil
+	mintData.Params.MintDenom = sdk.DefaultBondDenom
+	mintData.Params.UnfreezeAmountPerBlock = 1000000
 	mintDataBz, err := cdc.MarshalJSON(mintData)
 	require.NoError(t, err)
 	genesisState[mint.ModuleName] = mintDataBz
@@ -680,12 +679,11 @@ func TestScloudCLISubmitCommunityPoolSpendProposal(t *testing.T) {
 	// create some inflation
 	cdc := app.MakeCodec()
 	genesisState := f.GenesisState()
-	inflationMin := sdk.MustNewDecFromStr("10000.0")
 	var mintData mint.GenesisState
 	cdc.UnmarshalJSON(genesisState[mint.ModuleName], &mintData)
-	mintData.Minter.Inflation = inflationMin
-	mintData.Params.InflationMin = inflationMin
-	mintData.Params.InflationMax = sdk.MustNewDecFromStr("15000.0")
+	mintData.Minter.RemainedTokens = nil
+	mintData.Params.MintDenom = sdk.DefaultBondDenom
+	mintData.Params.UnfreezeAmountPerBlock = 1000000
 	mintDataBz, err := cdc.MarshalJSON(mintData)
 	require.NoError(t, err)
 	genesisState[mint.ModuleName] = mintDataBz

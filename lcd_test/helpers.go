@@ -250,15 +250,11 @@ func defaultGenesis(config *tmcfg.Config, nValidators int, initAddrs []sdk.AccAd
 
 	// mint genesis (none set within genesisState)
 	mintData := mint.DefaultGenesisState()
-	inflationMin := sdk.ZeroDec()
 	if minting {
-		inflationMin = sdk.MustNewDecFromStr("10000.0")
-		mintData.Params.InflationMax = sdk.MustNewDecFromStr("15000.0")
+		mintData.Params.UnfreezeAmountPerBlock = 1000000
 	} else {
-		mintData.Params.InflationMax = inflationMin
+		mintData.Params.UnfreezeAmountPerBlock = 0
 	}
-	mintData.Minter.Inflation = inflationMin
-	mintData.Params.InflationMin = inflationMin
 	mintDataBz := cdc.MustMarshalJSON(mintData)
 	genesisState[mint.ModuleName] = mintDataBz
 
@@ -269,23 +265,6 @@ func defaultGenesis(config *tmcfg.Config, nValidators int, initAddrs []sdk.AccAd
 	crisisData.ConstantFee = sdk.NewInt64Coin(sdk.DefaultBondDenom, 1000)
 	crisisDataBz = cdc.MustMarshalJSON(crisisData)
 	genesisState[crisis.ModuleName] = crisisDataBz
-
-	//// double check inflation is set according to the minting boolean flag
-	if minting {
-		if !(mintData.Params.InflationMax.Equal(sdk.MustNewDecFromStr("15000.0")) &&
-			mintData.Minter.Inflation.Equal(sdk.MustNewDecFromStr("10000.0")) &&
-			mintData.Params.InflationMin.Equal(sdk.MustNewDecFromStr("10000.0"))) {
-			err = errors.New("Mint parameters does not correspond to their defaults")
-			return
-		}
-	} else {
-		if !(mintData.Params.InflationMax.Equal(sdk.ZeroDec()) &&
-			mintData.Minter.Inflation.Equal(sdk.ZeroDec()) &&
-			mintData.Params.InflationMin.Equal(sdk.ZeroDec())) {
-			err = errors.New("Mint parameters not equal to decimal 0")
-			return
-		}
-	}
 
 	appState, err := codec.MarshalJSONIndent(cdc, genesisState)
 	if err != nil {

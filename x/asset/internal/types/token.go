@@ -71,9 +71,6 @@ func ValidateToken(token *Token) error {
 	if len(token.Description) > MaxTokenDesLenLimit {
 		return fmt.Errorf("token description length should be less than %d", MaxTokenDesLenLimit)
 	}
-	if len(token.Description) > MaxTokenDesLenLimit {
-		return fmt.Errorf("token description length should be less than %d", MaxTokenDesLenLimit)
-	}
 
 	if err := validateTokenSymbol(token.Symbol); err != nil {
 		return err

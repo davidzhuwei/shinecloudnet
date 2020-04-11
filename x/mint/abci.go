@@ -19,7 +19,7 @@ func BeginBlocker(ctx sdk.Context, k Keeper) {
 		minter.RemainedTokens = mintedCoins
 	}
 	var unfreezenTokens sdk.Coins
-	updatedParams := k.GetUpdatedParams(ctx)
+	updatedParams := k.GetParams(ctx)
 	unfreezenTokens = sdk.NewCoins(sdk.NewCoin(updatedParams.MintDenom, sdk.NewInt(updatedParams.UnfreezeAmountPerBlock)))
 	if minter.RemainedTokens.IsAllGTE(unfreezenTokens) {
 		// send the minted coins to the fee collector account

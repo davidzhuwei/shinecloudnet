@@ -2,8 +2,9 @@ package types
 
 import (
 	"fmt"
-	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 	"strings"
+
+	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 )
 
 const (
@@ -14,8 +15,7 @@ const (
 	MaxTokenNameLength           = 32
 	MaxTokenSymbolLength         = 12
 	MinTokenSymbolLength         = 3
-	MaxTokenDesLenLimit          = 128
-	NewMaxTokenDesLenLimit       = 1024
+	MaxTokenDesLenLimit          = 1024
 	MaxTotalSupply         int64 = 9000000000000000000 // int64 max value: 9,223,372,036,854,775,807
 )
 
@@ -73,9 +73,9 @@ func (msg IssueMsg) ValidateBasic() sdk.Error {
 	if msg.Decimal < 0 {
 		return ErrInvalidDecimal(DefaultCodespace, fmt.Sprintf("token decimal %d is negative", msg.Decimal))
 	}
-	desLenLimitation := NewMaxTokenDesLenLimit
-	if len(msg.Description) > desLenLimitation {
-		return ErrInvalidTokenDescription(DefaultCodespace, fmt.Sprintf("token description length %d should be less than %d", len(msg.Description), desLenLimitation))
+
+	if len(msg.Description) > MaxTokenDesLenLimit {
+		return ErrInvalidTokenDescription(DefaultCodespace, fmt.Sprintf("token description length %d should be less than %d", len(msg.Description), MaxTokenDesLenLimit))
 	}
 
 	return nil

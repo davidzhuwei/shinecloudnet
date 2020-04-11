@@ -48,7 +48,7 @@ func GetCmdQueryParams(cdc *codec.Codec) *cobra.Command {
 				return err
 			}
 
-			var params types.UpdatedParams
+			var params types.Params
 			if err := cdc.UnmarshalJSON(res, &params); err != nil {
 				return err
 			}

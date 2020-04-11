@@ -8,8 +8,6 @@ import (
 
 // Minter represents the minting state.
 type Minter struct {
-	Inflation        sdk.Dec   `json:"inflation" yaml:"inflation"`                 // current annual inflation rate
-	AnnualProvisions sdk.Dec   `json:"annual_provisions" yaml:"annual_provisions"` // current annual expected provisions
 	RemainedTokens   sdk.Coins `json:"remained_tokens" yaml:"remained_tokens"`
 }
 
@@ -17,8 +15,6 @@ type Minter struct {
 // provisions values.
 func NewMinter(inflation, annualProvisions sdk.Dec) Minter {
 	return Minter{
-		Inflation:        inflation,
-		AnnualProvisions: annualProvisions,
 	}
 }
 
@@ -40,9 +36,9 @@ func DefaultInitialMinter() Minter {
 
 // validate minter
 func ValidateMinter(minter Minter) error {
-	if minter.Inflation.LT(sdk.ZeroDec()) {
+	if minter.RemainedTokens.AmountOf(sdk.DefaultBondDenom).LT(sdk.ZeroInt()) {
 		return fmt.Errorf("mint parameter Inflation should be positive, is %s",
-			minter.Inflation.String())
+			minter.RemainedTokens.AmountOf(sdk.DefaultBondDenom).String())
 	}
 	return nil
 }

@@ -36,7 +36,6 @@ var (
 	ModuleCdc              = types.ModuleCdc
 	MinterKey              = types.MinterKey
 	KeyMintDenom           = types.KeyMintDenom
-	UpdatedParamKeyTable   = types.UpdatedParamKeyTable
 )
 
 type (
