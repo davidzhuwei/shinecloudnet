@@ -2343,7 +2343,7 @@ definitions:
     properties:
       denom:
         type: string
-        example: uscloud
+        example: uscds
       amount:
         type: string
         example: "50"
