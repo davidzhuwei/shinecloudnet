@@ -33,7 +33,7 @@ import (
 )
 
 const (
-	denom        = "stake"
+	denom        = sdk.DefaultBondDenom
 	keyFoo       = "foo"
 	keyBar       = "bar"
 	fooDenom     = "footoken"
@@ -49,7 +49,7 @@ var (
 		sdk.NewCoin(fee2Denom, sdk.TokensFromConsensusPower(2000000)),
 		sdk.NewCoin(feeDenom, sdk.TokensFromConsensusPower(2000000)),
 		sdk.NewCoin(fooDenom, sdk.TokensFromConsensusPower(2000)),
-		sdk.NewCoin(denom, sdk.TokensFromConsensusPower(300).Add(sdk.NewInt(12))), // add coins from inflation
+		sdk.NewCoin(denom, sdk.TokensFromConsensusPower(300).Add(sdk.NewIntWithDecimal(259999999, 6))), // add coins from inflation
 	)
 
 	startCoins = sdk.NewCoins(
@@ -136,6 +136,7 @@ func InitFixtures(t *testing.T) (f *Fixtures) {
 
 	// reset test state
 	f.UnsafeResetAll()
+	f.EnableIndexAllTags()
 
 	// ensure keystore has foo and bar keys
 	f.KeysDelete(keyFoo)
@@ -196,6 +197,13 @@ func (f *Fixtures) UnsafeResetAll(flags ...string) {
 	executeWrite(f.T, addFlags(cmd, flags))
 	err := os.RemoveAll(filepath.Join(f.ScloudHome, "config", "gentx"))
 	require.NoError(f.T, err)
+}
+
+// UnsafeResetAll is scloud unsafe-reset-all
+func (f *Fixtures) EnableIndexAllTags() {
+	cmd := fmt.Sprintf("sed -i \"\" s/index_all_tags.*/index_all_tags=true/g %s/config/config.toml", f.ScloudHome)
+	success := executeWrite(f.T, cmd)
+	require.True(f.T, success)
 }
 
 // GDInit is scloud init

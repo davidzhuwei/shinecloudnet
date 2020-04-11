@@ -28,18 +28,10 @@ func NewQuerier(k Keeper) sdk.Querier {
 func queryParams(ctx sdk.Context, k Keeper) ([]byte, sdk.Error) {
 	var res []byte
 	var err error
-	if sdk.GlobalUpgradeMgr.IsUpgradeApplied(sdk.RewardUpgrade) {
-		params := k.GetUpdatedParams(ctx)
-		res, err = codec.MarshalJSONIndent(k.cdc, params)
-		if err != nil {
-			return nil, sdk.ErrInternal(sdk.AppendMsgToErr("failed to marshal JSON", err.Error()))
-		}
-	} else {
-		params := k.GetParams(ctx)
-		res, err = codec.MarshalJSONIndent(k.cdc, params)
-		if err != nil {
-			return nil, sdk.ErrInternal(sdk.AppendMsgToErr("failed to marshal JSON", err.Error()))
-		}
+	params := k.GetUpdatedParams(ctx)
+	res, err = codec.MarshalJSONIndent(k.cdc, params)
+	if err != nil {
+		return nil, sdk.ErrInternal(sdk.AppendMsgToErr("failed to marshal JSON", err.Error()))
 	}
 
 	return res, nil

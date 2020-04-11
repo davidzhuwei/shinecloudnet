@@ -3,11 +3,6 @@ package types
 import "fmt"
 
 const (
-	RewardUpgrade                 = "RewardUpgrade"
-	TokenIssueUpgrade             = "TokenIssueUpgrade"
-	UpdateVotingPeriodHeight      = "UpdateVotingPeriodHeight"
-	UpdateTokenSymbolRulesHeight  = "UpdateTokenSymbolRulesHeight"
-	TokenDesLenLimitUpgradeHeight = "TokenDesLenLimitUpgradeHeight"
 )
 
 var GlobalUpgradeMgr = NewUpgradeManager()

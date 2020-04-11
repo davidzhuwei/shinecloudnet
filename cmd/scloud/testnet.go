@@ -192,7 +192,7 @@ func InitTestnet(cmd *cobra.Command, config *tmconfig.Config, cdc *codec.Codec,
 		}
 
 		accTokens := sdk.TokensFromConsensusPower(1000)
-		accStakingTokens := sdk.TokensFromConsensusPower(500000000)
+		accStakingTokens := sdk.TokensFromConsensusPower(25000000)
 		accs = append(accs, genaccounts.GenesisAccount{
 			Address: addr,
 			Coins: sdk.Coins{

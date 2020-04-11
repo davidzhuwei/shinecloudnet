@@ -11,7 +11,7 @@ func BeginBlocker(ctx sdk.Context, k Keeper) {
 	minter := k.GetMinter(ctx)
 	params := k.GetParams(ctx)
 	if ctx.BlockHeight() == 1 {
-		mintedCoins := sdk.NewCoins(sdk.NewCoin(params.MintDenom, sdk.NewIntWithDecimal(125, 12)))
+		mintedCoins := sdk.NewCoins(sdk.NewCoin(params.MintDenom, sdk.NewIntWithDecimal(259999999, 6)))
 		err := k.MintCoins(ctx, mintedCoins)
 		if err != nil {
 			panic(err)
@@ -19,12 +19,8 @@ func BeginBlocker(ctx sdk.Context, k Keeper) {
 		minter.RemainedTokens = mintedCoins
 	}
 	var unfreezenTokens sdk.Coins
-	if sdk.GlobalUpgradeMgr.IsUpgradeApplied(sdk.RewardUpgrade) {
-		updatedParams := k.GetUpdatedParams(ctx)
-		unfreezenTokens = sdk.NewCoins(sdk.NewCoin(updatedParams.MintDenom, sdk.NewInt(updatedParams.UnfreezeAmountPerBlock)))
-	} else {
-		unfreezenTokens = sdk.NewCoins(sdk.NewCoin(params.MintDenom, sdk.NewIntWithDecimal(5567, 2)))
-	}
+	updatedParams := k.GetUpdatedParams(ctx)
+	unfreezenTokens = sdk.NewCoins(sdk.NewCoin(updatedParams.MintDenom, sdk.NewInt(updatedParams.UnfreezeAmountPerBlock)))
 	if minter.RemainedTokens.IsAllGTE(unfreezenTokens) {
 		// send the minted coins to the fee collector account
 		err := k.AddCollectedFees(ctx, unfreezenTokens)
