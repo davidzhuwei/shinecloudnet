@@ -23,7 +23,7 @@ Shinecloudnet establishes a next-generation distributed application based on blo
 3. Init mainnet node PathToNodeHomeDirectory
     
     ```shell script
-    ./build/shined init {node name} --home {PathToNodeHomeDirectory}
+    ./build/scloud init {node name} --home {PathToNodeHomeDirectory}
     ```
 4. Get mainnet genesis file
 
@@ -71,7 +71,7 @@ Shinecloudnet establishes a next-generation distributed application based on blo
 9. Start mainnet node
 
     ```shell script
-    nohup ./build/shined start --home {PathToNodeHomeDirectory} &
+    nohup ./build/scloud start --home {PathToNodeHomeDirectory} &
     ```
  
 10. Check running log

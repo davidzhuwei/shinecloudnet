@@ -32,14 +32,14 @@ import (
 	"github.com/shinecloudfoundation/shinecloudnet/x/supply"
 )
 
-const appName = "ShineApp"
+const appName = "ScloudApp"
 
 var (
-	// default home directories for shinecli
-	DefaultCLIHome = os.ExpandEnv("$HOME/.shinecli")
+	// default home directories for scloudcli
+	DefaultCLIHome = os.ExpandEnv("$HOME/.scloudcli")
 
-	// default home directories for shined
-	DefaultNodeHome = os.ExpandEnv("$HOME/.shined")
+	// default home directories for scloud
+	DefaultNodeHome = os.ExpandEnv("$HOME/.scloud")
 
 	// The module BasicManager is in charge of setting up basic,
 	// non-dependant module elements, such as codec registration
