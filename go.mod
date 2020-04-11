@@ -8,9 +8,11 @@ require (
 	github.com/btcsuite/btcd v0.0.0-20190523000118-16327141da8c
 	github.com/cosmos/go-bip39 v0.0.0-20180819234021-555e2067c45d
 	github.com/cosmos/ledger-cosmos-go v0.10.3
-	github.com/gogo/protobuf v1.3.1
+	github.com/go-kit/kit v0.9.0 // indirect
+	github.com/gogo/protobuf v1.2.1
 	github.com/golang/mock v1.3.1
 	github.com/gorilla/mux v1.7.3
+	github.com/magiconair/properties v1.8.1 // indirect
 	github.com/mattn/go-isatty v0.0.8
 	github.com/onsi/ginkgo v1.8.0 // indirect
 	github.com/onsi/gomega v1.5.0 // indirect
@@ -26,17 +28,19 @@ require (
 	github.com/spf13/afero v1.2.2 // indirect
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.3
-	github.com/spf13/viper v1.5.0
+	github.com/spf13/viper v1.4.0
 	github.com/stretchr/testify v1.4.0
 	github.com/tendermint/btcd v0.1.1
 	github.com/tendermint/crypto v0.0.0-20180820045704-3764759f34a5
 	github.com/tendermint/go-amino v0.15.0
 	github.com/tendermint/iavl v0.12.4
-	github.com/tendermint/tendermint v0.32.8
-	github.com/tendermint/tm-db v0.3.0
+	github.com/tendermint/tendermint v0.32.2
+	github.com/tendermint/tm-db v0.1.1
 	golang.org/x/net v0.0.0-20190827160401-ba9fcec4b297 // indirect
+	golang.org/x/sys v0.0.0-20190804053845-51ab0e2deafa // indirect
 	golang.org/x/text v0.3.2 // indirect
-	gopkg.in/yaml.v2 v2.2.4
+	google.golang.org/genproto v0.0.0-20190701230453-710ae3a149df // indirect
+	gopkg.in/yaml.v2 v2.2.2
 )
 
 replace github.com/tendermint/iavl => github.com/shinecloudfoundation/iavl v0.12.4-shinecloudnet
