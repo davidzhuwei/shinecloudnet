@@ -1,9 +1,8 @@
-FROM alpine:3.7
+FROM ubuntu:18.04
 MAINTAINER Greg Szabo <greg@tendermint.com>
 
-RUN apk update && \
-    apk upgrade && \
-    apk --no-cache add curl jq file
+RUN apt update && \
+    apt install curl jq file -y
 
 VOLUME [ /scloud ]
 WORKDIR /scloud
