@@ -901,7 +901,7 @@ paths:
         description: Bech32 OperatorAddress of validator
         required: true
         type: string
-        x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+        x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
     get:
       summary: Query the current delegation between a delegator and a validator
       tags:
@@ -989,7 +989,7 @@ paths:
         description: Bech32 OperatorAddress of validator
         required: true
         type: string
-        x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+        x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
     get:
       summary: Query all unbonding delegations between a delegator and a validator
       tags:
@@ -1117,7 +1117,7 @@ paths:
         description: Bech32 ValAddress of Delegator
         required: true
         type: string
-        x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+        x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
     get:
       summary: Query a validator that a delegator is bonded to
       tags:
@@ -1172,7 +1172,7 @@ paths:
         description: Bech32 OperatorAddress of validator
         required: true
         type: string
-        x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+        x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
     get:
       summary: Query the information from a single validator
       tags:
@@ -1195,7 +1195,7 @@ paths:
         description: Bech32 OperatorAddress of validator
         required: true
         type: string
-        x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+        x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
     get:
       summary: Get all delegations from a validator
       tags:
@@ -1220,7 +1220,7 @@ paths:
         description: Bech32 OperatorAddress of validator
         required: true
         type: string
-        x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+        x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
     get:
       summary: Get all unbonding delegations from a validator
       tags:
@@ -1309,7 +1309,7 @@ paths:
   #          name: validatorPubKey
   #          required: true
   #          in: path
-  #          x-example: barkisvalconspub1zcjduepq0mu3g6yrkxsytqsn9sclsk83ndxqwejmrgt2t0lj4q5pn8d7vvmq93prza
+  #          x-example: scloudvalconspub1zcjduepq0mu3g6yrkxsytqsn9sclsk83ndxqwejmrgt2t0lj4q5pn8d7vvmq79vvya
   #      responses:
   #        200:
   #          description: OK
@@ -1367,7 +1367,7 @@ paths:
           name: validatorAddr
           required: true
           in: path
-          x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+          x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
         - description: ""
           name: UnjailBody
           in: body
@@ -1945,7 +1945,7 @@ paths:
         description: Bech32 OperatorAddress of validator
         required: true
         type: string
-        x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+        x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
     get:
       summary: Query a delegation reward
       description: Query a single delegation reward by a delegator
@@ -2051,7 +2051,7 @@ paths:
         description: Bech32 OperatorAddress of validator
         required: true
         type: string
-        x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+        x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
     get:
       summary: Validator distribution information
       description: Query the distribution information of a single validator
@@ -2075,7 +2075,7 @@ paths:
         description: Bech32 OperatorAddress of validator
         required: true
         type: string
-        x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+        x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
     get:
       summary: Fee distribution outstanding rewards of a single validator
       tags:
@@ -2098,7 +2098,7 @@ paths:
         description: Bech32 OperatorAddress of validator
         required: true
         type: string
-        x-example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+        x-example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
     get:
       summary: Commission and self-delegation rewards of a single validator
       description: Query the commission and self-delegation rewards of validator.
@@ -2337,13 +2337,13 @@ definitions:
   ValidatorAddress:
     type: string
     description: bech32 encoded address
-    example: barkisvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9c6lp7q
+    example: scloudvaloper1ka54cl8ep6shtxajr5mvp6f7evj2zvf9vhyq6n
   Coin:
     type: object
     properties:
       denom:
         type: string
-        example: ubarkis
+        example: uscloud
       amount:
         type: string
         example: "50"
@@ -2509,7 +2509,7 @@ definitions:
         example: cosmos1depk54cuajgkzea6zpgkq36tnjwdzv4afc3d27
       pub_key:
         type: string
-        example: "barkispub1addwnpepqd9cqykjppq89nwrg848nh6lgh8jtpr28wspn5am2kyjkdyp5a4wqvj2v39"
+        example: "scloudpub1addwnpepqd9cqykjppq89nwrg848nh6lgh8jtpr28wspn5am2kyjkdyp5a4wqmxqz5e"
       type:
         type: string
         example: local
@@ -2702,7 +2702,7 @@ definitions:
         $ref: "#/definitions/ValidatorAddress"
       pub_key:
         type: string
-        example: barkisvalconspub1zcjduepq0mu3g6yrkxsytqsn9sclsk83ndxqwejmrgt2t0lj4q5pn8d7vvmq93prza
+        example: scloudvalconspub1zcjduepq0mu3g6yrkxsytqsn9sclsk83ndxqwejmrgt2t0lj4q5pn8d7vvmq79vvya
       voting_power:
         type: string
         example: "1000"
@@ -2781,7 +2781,7 @@ definitions:
         $ref: "#/definitions/ValidatorAddress"
       consensus_pubkey:
         type: string
-        example: barkisvalconspub1zcjduepq0mu3g6yrkxsytqsn9sclsk83ndxqwejmrgt2t0lj4q5pn8d7vvmq93prza
+        example: scloudvalconspub1zcjduepq0mu3g6yrkxsytqsn9sclsk83ndxqwejmrgt2t0lj4q5pn8d7vvmq79vvya
       jailed:
         type: boolean
       status:

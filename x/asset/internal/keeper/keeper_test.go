@@ -31,7 +31,7 @@ func TestSendKeeper(t *testing.T) {
 	iterator := keeper.ListToken(ctx)
 	require.False(t, iterator.Valid())
 
-	token := types.NewToken("btc", "bitcoin", 6, 21000000000000, false, "bitcoin on barkisnet", addr1)
+	token := types.NewToken("btc", "bitcoin", 6, 21000000000000, false, "bitcoin on shinecloudnet", addr1)
 	keeper.SetToken(ctx, token)
 
 	iterator = keeper.ListToken(ctx)
@@ -52,11 +52,11 @@ func TestSendKeeper(t *testing.T) {
 	gettedToken = keeper.GetToken(ctx, "BTC")
 	require.Nil(t, gettedToken)
 
-	token = types.NewToken("eth", "ethereum", 6, 100000000000000, true, "ethereum on barkisnet", addr1)
+	token = types.NewToken("eth", "ethereum", 6, 100000000000000, true, "ethereum on shinecloudnet", addr1)
 	keeper.SetToken(ctx, token)
 	require.True(t, keeper.IsTokenExist(ctx, "eth"))
 
-	token = types.NewToken("eth", "ethereum", 6, 110000000000000, true, "ethereum on barkisnet", addr1)
+	token = types.NewToken("eth", "ethereum", 6, 110000000000000, true, "ethereum on shinecloudnet", addr1)
 	keeper.UpdateToken(ctx, token)
 
 	gettedToken = keeper.GetToken(ctx, "eth")

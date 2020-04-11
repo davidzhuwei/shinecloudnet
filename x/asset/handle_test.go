@@ -19,7 +19,7 @@ func TestSendKeeper(t *testing.T) {
 
 	handler := NewHandler(assetKeeper)
 
-	issueMsg := types.NewIssueMsg(addr1, "bitcoin", "btc", 21000000000000, false, 6, "bitcoin on barkisnet")
+	issueMsg := types.NewIssueMsg(addr1, "bitcoin", "btc", 21000000000000, false, 6, "bitcoin on shinecloudnet")
 	result := handler(ctx, issueMsg)
 	require.Equal(t, sdk.CodeOK, result.Code, result.Log)
 
@@ -31,7 +31,7 @@ func TestSendKeeper(t *testing.T) {
 	result = handler(ctx, mintMsg)
 	require.Equal(t, types.CodeNotMintableToken, result.Code, result.Log)
 
-	issueMsg = types.NewIssueMsg(addr1, "ethereum", "eth", 100000000000000, true, 6, "ethereum on barkisnet")
+	issueMsg = types.NewIssueMsg(addr1, "ethereum", "eth", 100000000000000, true, 6, "ethereum on shinecloudnet")
 	result = handler(ctx, issueMsg)
 	require.Equal(t, sdk.CodeOK, result.Code, result.Log)
 
@@ -55,12 +55,12 @@ func TestSendKeeper(t *testing.T) {
 	expectTotalSupply := sdk.Coins{sdk.NewCoin("btc", sdk.NewInt(21000000000000)), sdk.NewCoin("eth", sdk.NewInt(200000000000000)), sdk.NewCoin(sdk.DefaultBondDenom, sdk.NewInt(20000000000))}
 	require.True(t, expectTotalSupply.IsEqual(supplyKeeper.GetSupply(ctx).GetTotal()), expectTotalSupply.String())
 
-	issueMsg = types.NewIssueMsg(addr1, "ethereum", "ETH", 100000000000000, true, 6, "ethereum on barkisnet")
+	issueMsg = types.NewIssueMsg(addr1, "ethereum", "ETH", 100000000000000, true, 6, "ethereum on shinecloudnet")
 	result = handler(ctx, issueMsg)
 	require.Equal(t, types.CodeInvalidTokenSymbol, result.Code, result.Log)
 
 
-	issueMsg = types.NewIssueMsg(addr1, "EOS", "EOS", 100000000000000, true, 6, "EOS on barkisnet")
+	issueMsg = types.NewIssueMsg(addr1, "EOS", "EOS", 100000000000000, true, 6, "EOS on shinecloudnet")
 	result = handler(ctx, issueMsg)
 	require.Equal(t, sdk.CodeOK, result.Code, result.Log)
 	require.True(t, sdk.NewInt(100000000000000).Equal(supplyKeeper.GetSupply(ctx).GetTotal().AmountOf("eos")))
