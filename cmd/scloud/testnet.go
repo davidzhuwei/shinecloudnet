@@ -202,12 +202,15 @@ func InitTestnet(cmd *cobra.Command, config *tmconfig.Config, cdc *codec.Codec,
 		})
 
 		valTokens := sdk.TokensFromConsensusPower(100)
+		curCommission, _ := sdk.NewDecFromStr("0.1")
+		maxCommission, _ := sdk.NewDecFromStr("0.2")
+		maxCommissionChange, _ := sdk.NewDecFromStr("0.01")
 		msg := staking.NewMsgCreateValidator(
 			sdk.ValAddress(addr),
 			valPubKeys[i],
 			sdk.NewCoin(sdk.DefaultBondDenom, valTokens),
 			staking.NewDescription(nodeDirName, "", "", ""),
-			staking.NewCommissionRates(sdk.ZeroDec(), sdk.ZeroDec(), sdk.ZeroDec()),
+			staking.NewCommissionRates(curCommission, maxCommission, maxCommissionChange),
 			sdk.OneInt(),
 		)
 		kb, err := keys.NewKeyBaseFromDir(clientDir)
