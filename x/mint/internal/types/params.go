@@ -35,7 +35,7 @@ func NewParams (mintDenom string, unfreezeAmountPerBlock int64) Params {
 func DefaultParams() Params {
 	return Params{
 		MintDenom:              sdk.DefaultBondDenom,
-		UnfreezeAmountPerBlock: 1000000,
+		UnfreezeAmountPerBlock: 750000,
 	}
 }
 
