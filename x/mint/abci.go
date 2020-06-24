@@ -11,7 +11,7 @@ func BeginBlocker(ctx sdk.Context, k Keeper) {
 	minter := k.GetMinter(ctx)
 	params := k.GetParams(ctx)
 	if ctx.BlockHeight() == 1 {
-		mintedCoins := sdk.NewCoins(sdk.NewCoin(params.MintDenom, sdk.NewIntWithDecimal(249999999, 6)))
+		mintedCoins := sdk.NewCoins(sdk.NewCoin(params.MintDenom, sdk.NewIntWithDecimal(259999999, 6)))
 		err := k.MintCoins(ctx, mintedCoins)
 		if err != nil {
 			panic(err)
