@@ -23,20 +23,6 @@ minimum-gas-prices = "{{ .BaseConfig.MinGasPrices }}"
 halt-height = {{ .BaseConfig.HaltHeight }}
 
 [upgrade]
-# Upgrade to change reward rules
-RewardUpgrade = {{ .UpgradeConfig.RewardUpgrade }}
-
-# Upgrade to change reward rules
-TokenIssueHeight = {{ .UpgradeConfig.TokenIssueHeight }}
-
-# Upgrade to update voting period
-UpdateVotingPeriodHeight = {{ .UpgradeConfig.UpdateVotingPeriodHeight }}
-
-# Upgrade to update token symbol rules
-UpdateTokenSymbolRulesHeight = {{ .UpgradeConfig.UpdateTokenSymbolRulesHeight }}
-
-# Upgrade to change token description length limitation
-TokenDesLenLimitUpgradeHeight = {{ .UpgradeConfig.TokenDesLenLimitUpgradeHeight }}
 `
 
 var configTemplate *template.Template
