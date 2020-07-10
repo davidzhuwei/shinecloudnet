@@ -9,7 +9,7 @@ import (
 	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
 	"github.com/shinecloudfoundation/shinecloudnet/x/auth/client/utils"
-	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/types"
 )
 
 // GetTxCmd returns the transaction commands for this module

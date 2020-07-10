@@ -10,7 +10,7 @@ import (
 	"github.com/shinecloudfoundation/shinecloudnet/types/rest"
 	"github.com/shinecloudfoundation/shinecloudnet/x/auth/client/utils"
 
-	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/types"
 )
 
 // RegisterRoutes - Central function to define routes that get registered by the main application

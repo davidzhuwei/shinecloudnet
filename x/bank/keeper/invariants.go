@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
-	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/types"
 )
 
 // RegisterInvariants registers the bank module invariants

@@ -8,7 +8,7 @@ import (
 
 	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 	"github.com/shinecloudfoundation/shinecloudnet/x/auth/exported"
-	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/types"
 	"github.com/shinecloudfoundation/shinecloudnet/x/params"
 )
 

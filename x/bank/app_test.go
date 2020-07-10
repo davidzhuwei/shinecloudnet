@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 	"github.com/shinecloudfoundation/shinecloudnet/x/auth"
-	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/types"
 	"github.com/shinecloudfoundation/shinecloudnet/x/mock"
 
 	"github.com/stretchr/testify/require"

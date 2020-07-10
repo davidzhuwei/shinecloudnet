@@ -5,8 +5,8 @@
 package bank
 
 import (
-	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/keeper"
-	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/keeper"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/types"
 )
 
 const (
