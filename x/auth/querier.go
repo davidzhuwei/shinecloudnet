@@ -16,6 +16,8 @@ func NewQuerier(keeper AccountKeeper) sdk.Querier {
 		switch path[0] {
 		case types.QueryAccount:
 			return queryAccount(ctx, req, keeper)
+		case types.QueryParams:
+			return queryParams(ctx, path[1:], req, keeper)
 		default:
 			return nil, sdk.ErrUnknownRequest("unknown auth query endpoint")
 		}
@@ -40,3 +42,13 @@ func queryAccount(ctx sdk.Context, req abci.RequestQuery, keeper AccountKeeper) 
 
 	return bz, nil
 }
+
+func queryParams(ctx sdk.Context, path []string, req abci.RequestQuery, k AccountKeeper) ([]byte, sdk.Error) {
+	params := k.GetParams(ctx)
+	bz, err := codec.MarshalJSONIndent(k.cdc, params)
+	if err != nil {
+		return nil, sdk.ErrInternal(sdk.AppendMsgToErr("could not marshal result to JSON", err.Error()))
+	}
+	return bz, nil
+}
+

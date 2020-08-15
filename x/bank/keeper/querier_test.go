@@ -10,7 +10,7 @@ import (
 
 	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 	authtypes "github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
-	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/types"
 )
 
 func TestBalances(t *testing.T) {

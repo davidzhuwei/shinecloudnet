@@ -829,6 +829,31 @@ paths:
                     type: string
         500:
           description: Server internel error
+  /auth/params:
+    get:
+      summary: Get the current staking parameter values
+      tags:
+        - Staking
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              max_memo_characters:
+                type: number
+              tx_sig_limit:
+                type: number
+              tx_size_cost_per_byte:
+                type: number
+              sig_verify_cost_ed25519:
+                type: number
+              sig_verify_cost_secp256k1:
+                type: number
+        500:
+          description: Internal Server Error
   /staking/delegators/{delegatorAddr}/delegations:
     parameters:
       - in: path
@@ -1295,30 +1320,30 @@ paths:
         500:
           description: Internal Server Error
   # TODO: We need to either fix this route when the validator is not found or add a slashed validator in the contract tests
-  #  /slashing/validators/{validatorPubKey}/signing_info:
-  #    get:
-  #      summary: Get sign info of given validator
-  #      description: Get sign info of given validator
-  #      produces:
-  #        - application/json
-  #      tags:
-  #        - Slashing
-  #      parameters:
-  #        - type: string
-  #          description: Bech32 validator public key
-  #          name: validatorPubKey
-  #          required: true
-  #          in: path
-  #          x-example: scloudvalconspub1zcjduepq0mu3g6yrkxsytqsn9sclsk83ndxqwejmrgt2t0lj4q5pn8d7vvmq79vvya
-  #      responses:
-  #        200:
-  #          description: OK
-  #          schema:
-  #            $ref: "#/definitions/SigningInfo"
-  #        400:
-  #          description: Invalid validator public key
-  #        500:
-  #          description: Internal Server Error
+    /slashing/validators/{validatorPubKey}/signing_info:
+      get:
+        summary: Get sign info of given validator
+        description: Get sign info of given validator
+        produces:
+          - application/json
+        tags:
+          - Slashing
+        parameters:
+          - type: string
+            description: Bech32 validator public key
+            name: validatorPubKey
+            required: true
+            in: path
+            x-example: scloudvalconspub1zcjduepq0mu3g6yrkxsytqsn9sclsk83ndxqwejmrgt2t0lj4q5pn8d7vvmq79vvya
+        responses:
+          200:
+            description: OK
+            schema:
+              $ref: "#/definitions/SigningInfo"
+          400:
+            description: Invalid validator public key
+          500:
+            description: Internal Server Error
   /slashing/signing_infos:
     get:
       summary: Get sign info of given all validators

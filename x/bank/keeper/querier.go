@@ -7,7 +7,7 @@ import (
 
 	"github.com/shinecloudfoundation/shinecloudnet/codec"
 	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
-	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/types"
 )
 
 const (

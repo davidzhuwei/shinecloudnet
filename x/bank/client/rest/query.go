@@ -8,7 +8,7 @@ import (
 	"github.com/shinecloudfoundation/shinecloudnet/client/context"
 	sdk "github.com/shinecloudfoundation/shinecloudnet/types"
 	"github.com/shinecloudfoundation/shinecloudnet/types/rest"
-	"github.com/shinecloudfoundation/shinecloudnet/x/bank/internal/types"
+	"github.com/shinecloudfoundation/shinecloudnet/x/bank/types"
 )
 
 // query accountREST Handler
