@@ -831,9 +831,9 @@ paths:
           description: Server internel error
   /auth/params:
     get:
-      summary: Get the current staking parameter values
+      summary: Get the current auth parameter values
       tags:
-        - Staking
+        - Auth
       produces:
         - application/json
       responses:
