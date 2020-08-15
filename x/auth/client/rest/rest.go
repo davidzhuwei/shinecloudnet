@@ -2,8 +2,8 @@ package rest
 
 import (
 	"github.com/gorilla/mux"
-
 	"github.com/shinecloudfoundation/shinecloudnet/client/context"
+	"github.com/shinecloudfoundation/shinecloudnet/x/auth/types"
 )
 
 // RegisterRoutes registers the auth module REST routes.
@@ -11,6 +11,7 @@ func RegisterRoutes(cliCtx context.CLIContext, r *mux.Router, storeName string) 
 	r.HandleFunc(
 		"/auth/accounts/{address}", QueryAccountRequestHandlerFn(storeName, cliCtx),
 	).Methods("GET")
+	r.HandleFunc("/asset/params", paramsHandlerFn(cliCtx, types.QuerierRoute)).Methods("GET")
 }
 
 // RegisterTxRoutes registers all transaction routes on the provided router.
