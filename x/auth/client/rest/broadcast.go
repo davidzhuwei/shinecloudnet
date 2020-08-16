@@ -1,6 +1,7 @@
 package rest
 
 import (
+	"fmt"
 	"io/ioutil"
 	"net/http"
 
@@ -34,6 +35,13 @@ func BroadcastTxRequest(cliCtx context.CLIContext) http.HandlerFunc {
 			return
 		}
 
+		fmt.Println("---------------------------------------------------------------")
+		fmt.Println(fmt.Sprintf("Mode: %s", req.Mode))
+		fmt.Println(fmt.Sprintf("MFeeode: %v", req.Tx.Fee))
+		fmt.Println(fmt.Sprintf("Memo: %s", req.Tx.Memo))
+		fmt.Println(fmt.Sprintf("Msgs: %v", req.Tx.Msgs))
+		fmt.Println(fmt.Sprintf("Signatures: %v", req.Tx.Signatures))
+
 		txBytes, err := cliCtx.Codec.MarshalBinaryLengthPrefixed(req.Tx)
 		if err != nil {
 			rest.WriteErrorResponse(w, http.StatusInternalServerError, err.Error())
@@ -43,6 +51,8 @@ func BroadcastTxRequest(cliCtx context.CLIContext) http.HandlerFunc {
 		cliCtx = cliCtx.WithBroadcastMode(req.Mode)
 
 		res, err := cliCtx.BroadcastTx(txBytes)
+		fmt.Println(fmt.Sprintf("tx response: %v", res))
+		fmt.Println("---------------------------------------------------------------")
 		if err != nil {
 			rest.WriteErrorResponse(w, http.StatusInternalServerError, err.Error())
 			return
